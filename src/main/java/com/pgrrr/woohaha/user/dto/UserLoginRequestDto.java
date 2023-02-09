@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class UserJoinRequestDto {
+public class UserLoginRequestDto {
     private Integer id;
     private String email;
     private String pwd;
@@ -18,7 +18,7 @@ public class UserJoinRequestDto {
     private Date subscription;
 
     @Builder
-    public UserJoinRequestDto(Integer id, String email, String pwd, String cPwd, String name, Date subscription) {
+    public UserLoginRequestDto(Integer id, String email, String pwd, String cPwd, String name, Date subscription) {
         this.id = id;
         this.email = email;
         this.pwd = pwd;

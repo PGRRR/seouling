@@ -40,4 +40,12 @@ public class UserService {
         }
         return new UserResponseDto(user);
     }
+
+    public UserResponseDto modifyMember(UserJoinRequestDto updateRequest) {
+        User user = Optional.ofNullable(userMapper.findByEmail(updateRequest.getEmail())).orElseThrow(() -> new NullPointerException("존재하지 않는 회원 입니다."));
+        updateRequest.setId(user.getId());
+        updateRequest.setPwd(EncryptSha256.encrypt(updateRequest.getPwd()));
+        userMapper.update(updateRequest.toEntity());
+        return new UserResponseDto(user);
+    }
 }

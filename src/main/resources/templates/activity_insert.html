@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header data-include-path="/admin/main"></header>
+
+<section>
+    <div class="wrap">
+        <div class="frame _mw400">
+            <div class="wrap">
+
+
+
+    <h1>컨텐츠 추가</h1>
+    <form action="/admin/contentAdd" method="post" id="insert_form">
+        <label>분류코드</label><br>
+        <input type="text" th:name="acti_cd" th:id="acti_cd"/><br>
+        <label>썸네일</label><br>
+        <input type="text" th:name="thmb" th:id="thmb"/><br>
+        <label>썸네일 설명</label><br>
+        <input type="text" th:name="thmb_alt" th:id="thmb_alt"/><br>
+        <label>제목</label><br>
+        <input type="text" th:name="ttl" th:id="ttl"/><br>
+        <label>대표 설명</label><br>
+        <input type="text" th:name="rpr_dsc" th:id="rpr_dsc"/><br>
+        <label>원본 사이트 URL</label><br>
+        <input type="text" th:name="orgn_site" th:id="orgn_site"/><br>
+        <label>운영 시작 날짜(시간)</label><br>
+        <input type="text" th:name="opr_prd_from" th:id="opr_prd_from"/><br>
+        <label>운영 종료 날짜(시간)</label><br>
+        <input type="text" th:name="opr_prd_to" th:id="opr_prd_to"/><br>
+        <label>주소(문자열)</label><br>
+        <input type="text" th:name="str_addr" th:id="str_addr"/><br>
+        <label>주소명</label><br>
+        <input type="text" th:name="addr_nm" th:id="addr_nm"/><br>
+        <label>주소 좌표 값</label><br>
+        <input type="text" th:name="addr_crd" th:id="addr_crd"><br>
+        <label>상세내용 HTML</label><br>
+        <input type="text" th:name="html_dtl" th:id="html_dtl"/><br>
+    </form>
+        <button id="insert_btn">등록</button>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+<script>
+
+
+    //html include for UI Develop script - sys 220329
+    window.addEventListener('load', function () {
+        var allElements = document.getElementsByTagName('*');
+        Array.prototype.forEach.call(allElements, function (el) {
+            var includePath = el.dataset.includePath;
+            if (includePath) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        el.outerHTML = this.responseText;
+                    }
+                };
+                xhttp.open('GET', includePath, true);
+                xhttp.send();
+            }
+        });
+    });
+
+
+
+
+    let insert_form = document.getElementById('insert_form');
+    let insert_btn = document.getElementById('insert_btn');
+    insert_btn.addEventListener('click',function (){
+        let acti_cd = document.getElementById('acti_cd');
+        let thmb = document.getElementById('thmb');
+        let thmb_alt = document.getElementById('thmb_alt');
+        let ttl = document.getElementById('ttl');
+        let rpr_dsc = document.getElementById('rpr_dsc');
+        let orgn_site = document.getElementById('orgn_site');
+        let opr_prd_from = document.getElementById('opr_prd_from');
+        let opr_prd_to = document.getElementById('opr_prd_to');
+        let str_addr = document.getElementById('str_addr');
+        let addr_nm = document.getElementById('addr_nm');
+        let addr_crd = document.getElementById('addr_crd');
+        let html_dtl = document.getElementById('html_dtl');
+
+        if (acti_cd.value == null || acti_cd.value == '') {
+            acti_cd.focus();
+            alert('분류코드를 입력해주세요');
+            return false;
+        }
+
+        if (thmb.value == null || thmb.value == '') {
+            thmb.focus();
+            alert('썸네일 사진 경로를 입력해주세요');
+            return false;
+        }
+
+        if (thmb_alt.value == null || thmb_alt.value == '') {
+            thmb_alt.focus();
+            alert('썸네일 대체 설명을 입력해주세요');
+            return false;
+        }
+
+        if (ttl.value == null || ttl.value == '') {
+            ttl.focus();
+            alert('제목을 입력해주세요');
+            return false;
+        }
+
+        if (rpr_dsc.value == null || rpr_dsc.value == '') {
+            rpr_dsc.focus();
+            alert('대표 설명을 입력해주세요');
+            return false;
+        }
+
+        if (orgn_site.value == null || orgn_site.value == '') {
+            orgn_site.focus();
+            alert('원본 사이트 링크를 입력해주세요.');
+            return false;
+        }
+
+        if (opr_prd_from.value == null || opr_prd_from.value == '') {
+            opr_prd_from.focus();
+            alert('운영 시작 날짜를 입력해주세요.');
+            return false;
+        }
+
+        if (opr_prd_to.value == null || opr_prd_to.value == '') {
+            opr_prd_to.focus();
+            alert('운영 종료 날짜를 입력해주세요.');
+            return false;
+        }
+
+        if (str_addr.value == null || str_addr.value == '') {
+            str_addr.focus();
+            alert('주소를 입력해주세요');
+            return false;
+        }
+
+        if (addr_nm.value == null || addr_nm.value == '') {
+            addr_nm.focus();
+            alert('주소명을 입력해주세요');
+            return false;
+        }
+
+        if (addr_crd.value == null || addr_crd.value == '') {
+            addr_crd.focus();
+            alert('주소 좌표값을 입력해주세요');
+            return false;
+        }
+
+        if (html_dtl.value == null || html_dtl.value == '') {
+            html_dtl.focus();
+            alert('상세내용 HTML을 입력해주세요');
+            return false;
+        }
+
+        insert_form.submit();
+    });
+</script>
+</html>

@@ -1,0 +1,143 @@
+<html>
+<head>
+    <title>서울링</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="서울링">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="서울링">
+    <!-- <link rel="icon" href="../common/resources/favicon.ico" type="image/x-icon"> -->
+    <link type="text/css" rel="stylesheet" href="/common/css/reset.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/font.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/common.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/layout.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/contents.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/animate.css?update=2210162304">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+</head>
+<body data-loca="stamp">
+<header th:include="/page/layout/header :: header"></header>
+<nav th:include="/page/layout/nav :: nav"></nav>
+<section>
+    <div class="secItem stampSec">
+        <div class="sideArea">
+            <div class="headBox">
+                <div class="wrap">
+                    <div class="titleBox">
+                        <h5><B>내 스탬프판</B></h5>
+                    </div>
+                    <div class="controlBox">
+                        <div class="btnBox">
+                            <a href="/active" class="btn _wFull _h35 __style021">투어 추가하기 (<span
+                                    class="__style02" th:text="${stampList != null ? stampList.size() : 0}"></span>/10)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contentBox">
+                <div class="stampArea">
+                    <ul class="stampList">
+                        <div th:each="stamp, stampStat : ${stampList}">
+                            <li th:if="${stamp.title} == null" class="stampItem __empty __style02">선택한 투어가 없어요.</li>
+                            <li th:unless="${stamp.title} == null" class="stampItem" th:data-con="${stampStat.count}">
+                                <div class="wrap">
+                                    <div class="badge __style025" th:text="${stampStat.count}"></div>
+                                    <div class="thm"
+                                         th:style="'background-image: url(' + ${stamp.thumb} + ');'"></div>
+                                    <div class="textBox">
+                                        <h6><B th:text="${stamp.title}"></B></h6>
+                                        <p th:text="${stamp.content}"></p>
+                                    </div>
+                                    <div class="dateBox">
+                                        <span class="label">운영기간</span>
+                                        <h5 th:text="${stamp.date}"></h5>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="dropBox"><i class="icon"></i></div>
+        </div>
+        <div class="seoulArea">
+            <div class="controlBox">
+                <div class="stateBox">
+                    <button type="button" class="logo"><i class="icon __logoC"></i></button>
+                    <h5><b class="__style01" th:text="${stampList != null ? stampList.size() : 0}"></b>/10 수집</h5>
+                </div>
+                <div class="maptypeBox scToggle toggleBox __style021 _h35" data-state="btn1">
+                    <div class="wrap">
+
+                        <button type="button" class="btn __style022" data-btn="btn1"
+                                onclick="stampClear();deckView('4',['1','2','3']);deckView('20',['4','5','6']);doing();">
+                            사진 보기
+                        </button>
+                        <button type="button" class="btn __style022" data-btn="btn2"
+                                onclick="conClear();stampView('4',['1','2','3']);stampView('20',['4','5','6']);doing();">
+                            스탬프로 보기
+                        </button>
+                        <div class="bg"></div>
+                    </div>
+                </div>
+                <a href="/share">
+                    <button type="button" class="shareBtn btn _w100 _h35 __style023">공유하기</button>
+                </a>
+            </div>
+            <div class="mapBox">
+            </div>
+        </div>
+    </div>
+</section>
+<footer th:include="page/layout/footer :: footer"></footer>
+<!-- <div data-include-path="../layout/popup.html"></div> -->
+</body>
+<script type="text/javascript" src="/common/js/common.js?update=2210162304"></script>
+<script>
+    mapLoading();
+    deckView('4', ["1", "2", "3"]);
+    deckView('20', ["4", "5", "6"]);
+</script>
+<script>
+    $(".stampList").sortable({
+        items: $(".stampItem"),
+        cursor: "move",
+        axis: 'y',
+        handle: ".badge",
+        start: function (event, ui) {
+            $('.dropBox').addClass('ON');
+        },
+        stop: function (event, ui) {
+            $('.dropBox').removeClass('ON');
+        },
+        update: function (event, ui) {
+            $('.stampItem').each(function (i) {
+                var numbering = i + 1;
+                $(this).find('.badge').text(numbering);
+            });
+
+        },
+
+    });
+    $('.dropBox').droppable({
+        accept: '.stampItem',
+        drop: function (event, ui) {
+            ui.helper.remove();
+            var conNo = ui.helper.attr('data-con');
+            var conCount = Number($('.mapTile [data-con="' + conNo + '"]').closest('.content').attr('data-count'));
+            $('.mapTile [data-con="' + conNo + '"]').closest('.content').attr('data-count', Number(conCount - 1));
+            $('*[data-con="' + conNo + '"]').remove();
+
+        }
+    });
+</script>
+</html>

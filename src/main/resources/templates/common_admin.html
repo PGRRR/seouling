@@ -1,0 +1,270 @@
+
+    <link type="text/css" rel="stylesheet" href="https://hazo.world/project/seouling/common/css/reset.css?update=2210180943">
+    <style>
+
+
+
+        header .cateBox li a{
+            -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+        body{
+            padding-left: 240px;
+            min-width: 1300px;
+        }
+        body section{
+            padding: 30px 50px;
+        }
+        body section .frame{
+            border-radius: 20px;
+            border: 1px solid #eee;
+            padding: 30px 30px 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.1);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        body section .frame > .wrap{
+            margin: 0 auto;
+        }
+        body section .frame._mw400 > .wrap{
+            max-width: 400px;
+        }
+        body section .frame._mw1000 > .wrap{
+            max-width: 1000px;
+        }
+        body section .frame h1{
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            margin-top: 30px;
+
+        }
+
+
+
+        header {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 240px;
+            background-color: #f5f5f5;
+        }
+        header > .wrap {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            padding: 50px;
+            padding-right: 0;
+        }
+        header  .logo{
+            font-size: 20px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        header .cateBox{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-55%);
+        }
+        header .cateBox li{
+            margin-bottom: 15px;
+        }
+        header .cateBox li:last-child,
+        header .cateBox li .depth a:last-child {
+            margin-bottom: unset;
+        }
+
+        header .cateBox li > a {
+            display: block;
+            width: calc(100% + 55px);
+            position: relative;
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 20px 0 18px 30px;
+            padding-left: 60px;
+
+            height: 100%;
+            font-size: 14px;
+        }
+        header .cateBox li > a::before {
+            content:'';
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #eee;
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        header .cateBox li > a::before {
+            background-color: #fff;
+        }
+        header .cateBox li.NOW > a {
+            background-color: gold;
+            font-weight: bold;
+        }
+        header .cateBox li:hover > a{
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(0,0,0,.05);
+        }
+
+        header .cateBox li .depth{
+            padding: 20px 25px;
+
+            padding-left: 60px;
+        }
+
+        header .cateBox li .depth a{
+            display: block;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+
+
+
+
+        input[type="text"],
+        input[type="file"],
+        select{
+            height: 40px;
+            padding: 0 15px;
+            border-radius: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 12px;
+            color: #555;
+        }
+        button,
+        .btn,
+        input[type="submit"] {
+            display: inline-block;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            height: 40px;
+            text-align: center;
+            line-height: 39px;
+            font-size: 15px;
+            font-weight: bold;
+            width: 100%;
+            cursor:pointer
+
+        }
+        button,
+        .btn{
+            border: 1px solid #ddd;
+        }
+        input[type="submit"] {
+            background-color: gold;
+        }
+
+
+        table{
+            border: 1px solid #eee;
+            border-bottom: unset;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        table thead tr th,
+        table tbody tr td{
+            border-bottom: 1px solid #eee;
+        }
+        table tr td,
+        table tr th {
+            padding: 5px 8px;
+            line-height: 18px;
+            font-size: 12px;
+        }
+        table .textOver2{
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        table thead tr th {
+            text-align: center;
+        }
+        table tbody tr td select,
+        table tbody tr td .btn {
+            height: 25px;
+            line-height: 24px;
+            font-size: 12px;
+            padding: 0 5px;
+        }
+        table tbody tr td .btn {
+            width: fit-content;
+            margin: 2px;
+            padding: 0 10px;
+
+        }
+
+        table .thm {
+            display: inline-block;
+            margin-right: 5px;
+            width: 60px;
+            height: 60px;
+
+            background-color: #eee;
+            border: 1px solid #ddd;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            vertical-align: middle;
+        }
+        table .thm ~ *{
+            vertical-align: middle;
+            display: inline-block;
+            max-width: calc(100% - 70px);
+        }
+        table + .btnBox {
+            display: block;
+            width: fit-content;
+
+            margin-left: auto;
+            margin-right: 0;
+            padding: 5px;
+        }
+        table + .btnBox * {
+            width: fit-content;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+            height: 35px;
+            line-height: 33px;
+            padding: 0 10px;
+            font-size: 12px;
+        }
+        table + .btnBox *:last-child {
+            margin-right: unset;
+        }
+    </style>
+
+<header>
+    <div class="wrap">
+        <a href="" class="logo">서울링 Admin </a>
+        <div class="cateBox">
+            <ul>
+                <li class="NOW">
+                    <a href="">활동터 관리</a>
+                    <ol class="depth">
+                        <a href="/admin/contentList">컨텐츠 목록 조회</a>
+                        <a href="/admin/contentAdd">컨텐츠 추가</a>
+<!--                        <a href="/admin/contentEdit">컨텐츠 수정</a>-->
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>

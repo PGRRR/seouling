@@ -1,0 +1,137 @@
+<html>
+
+<head>
+    <title>서울링</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="서울링">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="서울링">
+    <!-- <link rel="icon" href="../common/resources/favicon.ico" type="image/x-icon"> -->
+    <link type="text/css" rel="stylesheet" href="/common/css/reset.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/font.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/common.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/layout.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/contents.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/animate.css?update=2210162304">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/> -->
+    <script type="text/javascript" src="../../common/js/jquery.min.js"></script>
+</head>
+<body data-loca="share">
+<header th:include="/page/layout/header :: header"></header>
+<nav th:include="/page/layout/nav :: nav"></nav>
+<section>
+    <div class="secItem shareSec">
+        <!--        <a href="/" class="logo"><i class="icon __logoW"></i></a>-->
+        <div class="titleBox">
+            <h5 class="__style02">나만의 서울 여행</h5>
+            <h2><B><span class="__style01">깜찍한 얍카</span>님의<br/>서울링 투어</B></h2>
+            <div class="btnBox">
+                <a href="/clear" class="btn _w120 _h35 __style011">새로 하기</a>
+                <a href="/active" class="btn _w120 _h35 __style021">계속 하기</a>
+            </div>
+        </div>
+        <div class="spreadList">
+            <div th:each="stamp, stampStat : ${stampList}">
+                <div class="deck">
+                    <div class="wrap">
+                        <div class="contentBox">
+                            <div class="thm"
+                                 th:style="'background-image: url(' + ${stamp.thumb} + ');'"></div>
+                            <div class="textBox">
+                                <h6><B th:text="${stamp.title}"></B></h6>
+                                <p th:text="${stamp.content}"></p>
+                            </div>
+                            <div class="dateBox">
+                                <span class="label">운영기간</span>
+                                <h5 th:text="${stamp.date}"></h5>
+                                <!--                            <h6><span class="__style01">1일</span> 남음</h6>-->
+                            </div>
+                            <div class="graph">
+                                <div class="bar __style011" style="width: 40%"></div>
+                            </div>
+                            <button type="button" class="detailBtn btn _w35 _h35 __style021"><i class="icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="seoulArea">
+            <div class="mapBox">
+            </div>
+        </div>
+    </div>
+</section>
+<footer th:include="page/layout/footer :: footer"></footer>
+<div data-include-path="../layout/popup.html"></div>
+</body>
+<script type="text/javascript" src="../../common/js/common.js?update=2210162304"></script>
+<script>
+    mapLoading();
+    stampView('8', ["1", "2", "3"]);
+</script>
+<!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+<!-- <script>
+    var swiper = new Swiper(".swiper.__point", {
+      slidesPerView: "auto",
+      spaceBetween: 0,
+      pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        }
+    });
+    var swiper = new Swiper(".swiper.__service", {
+        slidesPerView: 4,
+        slidesPerGroup: 1,
+        spaceBetween: 30,
+        grabCursor: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+            breakpoints: {
+                // when window width is >= 1099px
+                600: {
+                slidesPerView: 1,
+                },
+                // when window width is >= 1099px
+                900: {
+                slidesPerView: 2,
+                },
+                // when window width is >= 1099px
+                1200: {
+                slidesPerView: 3,
+                }
+            }
+    });
+    var swiper = new Swiper(".swiper.__portfolio", {
+        slidesPerView: 4,
+        slidesPerGroup: 1,
+        centeredSlides: false,
+        spaceBetween: 30,
+        grabCursor: true,
+            breakpoints: {
+                // when window width is >= 1099px
+                600: {
+                slidesPerView: 1,
+                },
+                // when window width is >= 1099px
+                900: {
+                slidesPerView: 2,
+                },
+                // when window width is >= 1099px
+                1200: {
+                slidesPerView: 3,
+                }
+            }
+    });
+</script> -->
+</html>

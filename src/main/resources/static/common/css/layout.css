@@ -1,0 +1,501 @@
+header {
+    z-index: 50;
+    background-color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    border-right: 1px solid #eee;
+}
+
+header .btn {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-bottom: 1px solid #eee;
+    border-radius: unset;
+}
+header .btn.__menu .icon{
+    background-size: 40px auto;
+}
+header .cateBox {
+    margin-top: 20px;
+}
+header .cateBox .btn:nth-child(1) {
+    border-top: 1px solid #eee;
+}
+header .btn .label{
+    position: absolute;
+    font-size: .9rem;
+    font-weight: 500;
+    color: #aaa;
+    bottom: 12px;
+    width: 100%;
+    left: 0;
+}
+header .btn .badge{
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #F6D42A;
+    font-weight: 800;
+    text-align: center;
+    line-height: 18px;
+    font-size: .9rem;
+}
+
+    header .cateBox .btn.ON,
+    header .cateBox .btn.NOW {
+        background-color: #FEFBE9;
+        border-left: 4px solid #F6D42A;
+    } 
+
+    header .cateBox .btn.ON .label,
+    header .cateBox .btn.NOW .label{
+        color: #555;
+        font-weight: 800;
+    }
+
+    header .btn.__menu.ON .icon,
+    header .btn.__menu.NOW .icon{
+        background-size: 24px auto;
+    }
+    header .btn.ON .badge{
+        right: 8px
+    }
+
+
+    body.headerON header {
+        width: 40px;
+    }
+
+    body.headerON header .btn {
+        width: 40px;
+        height: 40px;
+    }
+    body.headerON header .btn .label {
+        display: none;
+    }
+    body.headerON header .cateBox{
+        margin-top: unset;
+    }
+    body.headerON header .cateBox .btn:first-child{
+        border-top: unset;
+    }
+    body.headerON header .btn .badge{
+        width: 14px;
+        height: 14px;
+        right: 3px;
+        top: 3px;
+        line-height: 14px;
+        font-size: .7rem;
+    }
+
+
+
+
+
+.btn.__hamburger {
+    z-index: 15;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+	padding-top: 13px;
+	padding-left: 4px;
+}
+
+.btn.__hamburger {
+	padding-left: 11px;
+	padding-top: unset;
+}
+
+.btn.__hamburger i {
+	display: block;
+	width: 26px;
+	height: 4px;
+	margin-bottom: 5px;
+	background-color: #fff;
+	border-radius: 3px;
+}
+
+
+
+body.headerON .btn.__hamburger i {
+	display: inline-block;
+}
+
+body.headerON .btn.__hamburger i:nth-child(1) {
+	transform: rotate(45deg) translate(-4px, 11px);
+}
+
+
+body.headerON .btn.__hamburger i:nth-child(2) {
+	display: none;
+}
+
+
+body.headerON .btn.__hamburger i:nth-child(3) {
+	transform: rotate(-45deg) translate(-6px, -11px);
+}
+
+
+body.headerON .btn.__hamburger i:last-child {
+	margin-bottom: 0
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.scToggle {
+    border-radius: 18px;
+    width: fit-content;
+    padding: 0  6px;
+}
+.scToggle .btn{
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+    font-weight: 500;
+    padding: 0 3px;
+    line-height: 36px;
+}
+.scToggle .bg {
+    position: absolute;
+    top: 4px;
+    z-index: 1;
+    background-color: #fff;
+    border-radius: 15px;
+    height: 27px;
+}
+
+
+nav .langBox {
+    z-index: 55;
+    position: fixed;
+    top: 25px;
+    right: 25px;
+}
+nav .langBox[data-state="btn1"] .bg {
+    left: -1px;
+    width: 30%;
+}
+nav .langBox[data-state="btn2"] .bg {
+    left: 25%;
+    width: 19%;
+}
+nav .langBox[data-state="btn3"] .bg {
+    left: 41%;
+    width: 31%;
+}
+nav .langBox[data-state="btn4"]{
+    padding-right: 2px;
+}
+nav .langBox[data-state="btn4"] .bg {
+    left: 67%;
+    width: 32%;
+}
+
+.scToggle[data-state="btn1"] .btn:nth-child(1),
+.scToggle[data-state="btn2"] .btn:nth-child(2),
+.scToggle[data-state="btn3"] .btn:nth-child(3),
+.scToggle[data-state="btn4"] .btn:nth-child(4){
+    color: #000;
+    font-weight: 800;
+    padding: 0 10px 0 8px;
+}
+
+
+
+
+
+
+.formItem input {
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    border: 1px solid #eee;
+    font-size: 1.2rem;
+}
+.formItem input::placeholder {
+    color: #555;
+}
+.formItem select {
+    background-color: transparent;
+    border: unset;
+    height: 25px;
+    color:#900810;
+    width: fit-content;
+}
+.formItem select option{
+    color: #333;
+}
+.formItem select:focus,
+.formItem select:active {
+    outline: unset;
+}
+.formItem .radioBox{
+    position: relative;
+    display: inline-block;
+    margin: 0 6px 10px 0;
+    vertical-align: middle;
+}
+.formItem .radioBox input {
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.formItem .radioBox > *{
+    vertical-align: middle;
+    display: inline-block;
+}
+.formItem .radioBox .mark {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    background-color: #fff;
+    position: relative;
+    margin-right: 5px;
+}
+.formItem .radioBox .label {
+    color: #fff;
+}
+.formItem .radioBox input:checked ~.mark::before {
+    content: '';
+    border: 1px solid #d0ae06;
+    background-color: #F6D42A;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 50%;
+}
+.formItem._date.__range{
+    white-space: nowrap;
+}
+.formItem._date.__range > *{
+    display: inline-block;
+    vertical-align: middle;
+}
+.formItem._date.__range input{
+    width: calc(50% - 12px);
+    padding: 0 12px;
+}
+.formItem._date.__range .dash{
+    width: 20px;
+    text-align: center;
+    color: #ddd;
+}
+.formBox.__tem01 {
+    position: relative;
+   padding-left: 100px; 
+   margin-bottom: 10px;
+}
+.formBox.__tem01 + .btnBox {
+    margin-top: 20px;
+}
+.formBox.__tem01 .formLabel{
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.3rem;
+    line-height: 20px;
+}
+
+
+
+.searchBox{
+    position: relative;
+}
+.searchBox .search {
+    position: relative;
+    white-space: nowrap;
+}
+.searchBox .search .formItem {
+    width: calc(100% - 40px);
+    margin-right: 5px;
+}
+.searchBox .search .formItem input{
+    padding-left: 35px;
+}
+.searchBox .search > *{
+    display: inline-block;
+    vertical-align: top;
+}
+.searchBox .search .btn {
+    border-radius: 5px;
+}
+
+
+
+
+
+
+/************************     POPUP      ************************/
+
+.popup {
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    display: none;
+}
+
+.popup .popupItem {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.3);
+    padding:30px;
+    width: calc(100% - 30px);
+    
+}
+.popup .popupItem._ssmall{
+    max-width: 400px;
+}
+.popup .popupItem._small{
+    max-width: 500px;
+}
+.popup .popupItem._midium{
+    max-width: 700px;
+}
+.popup .popupItem._smidium{
+    max-width: 800px;
+}
+.popup .popupItem._large{
+    max-width: 1000px;
+}
+.popup .popupItem.__depth1{
+    z-index: 3;
+}
+.popup .popupItem.__depth2{
+    z-index: 5;
+}
+.popup .popupItem.__depth3{
+    z-index: 7;
+}
+.popup .popupItem.__depth9{
+    z-index: 100;
+}
+.popup > .dim {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #000;
+    opacity: .6;
+    top: 0;
+    left: 0;
+}
+body.layerDepth2 .popup > .dim {
+    z-index: 4;
+}
+
+.popup .popupItem .btnBox .btn {
+    display: inline-block;
+    vertical-align: middle;
+}
+.popup .popupItem .btnBox .btn._w-35{
+    width: calc(100% - 45px);
+}
+.popup .popupItem .btnBox .btn._w35 + .btn._w-35 {
+    margin-right: 5px;
+}
+.popup .popupItem .btnBox .btn._w-35 + .btn._w35{
+    margin-left: 5px;
+}
+
+.popup .popupItem .titleBox h4 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+.popup .popupItem .titleBox h6 {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    margin-top: 15px;
+    font-weight: 400;
+    color:#555;
+}
+
+.popup .popupItem .btnBox {
+    margin-top: 60px;
+}
+
+
+
+
+@media only screen and (max-width:1150px) {
+
+    
+    header {
+        width: 40px;
+        left: 10px;
+        top: 10px;
+        height: unset;
+        width: 40px;
+    }
+
+    header .btn {
+        width: 40px;
+        height: 40px;
+    }
+    header .btn .label {
+        display: none;
+    }
+    header .cateBox{
+        margin-top: unset;
+    }
+    header .cateBox .btn:first-child{
+        border-top: unset;
+    }
+    header .btn .badge{
+        width: 14px;
+        height: 14px;
+        right: 3px;
+        top: 3px;
+        line-height: 14px;
+        font-size: .7rem;
+    }
+    header .btn.__menu .icon {
+        background-size: 24px auto;
+    }
+    body.headerON header .cateBox .btn {
+        height: 0;
+        border: unset;
+    }
+    body.headerON header .cateBox .btn .badge{
+        opacity: 0;
+    }
+    nav .langBox{
+        right: 10px;
+        top: 10px;
+    }
+}

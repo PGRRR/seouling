@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.space.seouling.stamp.dao.StampDao">
+    <insert id="save" parameterType="StampRequestDto">
+        INSERT INTO STAMP_TB(acti_id, user_id, seq)
+        VALUES (#{acti_id}, #{user_id}, #{seq});
+    </insert>
+    <select id="findByUserId" parameterType="string" resultType="StampResponseDto">
+        SELECT *
+        FROM STAMP_TB
+        WHERE user_id = #{user_id};
+    </select>
+    <update id="update" parameterType="StampRequestDto">
+        UPDATE STAMP_TB
+        SET seq = #{seq}
+        WHERE user_id = #{user_id}
+        AND acti_id = #{acti_id};
+    </update>
+    <delete id="delete" parameterType="StampRequestDto">
+        DELETE
+        FROM STAMP_TB
+        WHERE user_id = #{user_id}
+        AND acti_id = #{acti_id};
+    </delete>
+    <select id="count" resultType="int">
+        SELECT COUNT(acti_id)
+        FROM STAMP_TB
+        WHERE user_id = #{user_id};
+    </select>
+    <delete id="deleteLastOne" parameterType="string">
+        DELETE
+        FROM STAMP_TB
+        WHERE user_id = #{user_id}
+        ORDER BY seq ASC
+        LIMIT 1;
+    </delete>
+    <select id="findLastSeqByUserId" parameterType="string" resultType="int">
+        SELECT seq
+        FROM STAMP_TB
+        WHERE user_id = #{user_id}
+        ORDER BY seq DESC
+        LIMIT 1;
+    </select>
+</mapper>

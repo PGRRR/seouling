@@ -1,0 +1,485 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* { 
+font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+html {
+    font-size: 12px;
+}
+body{
+    height: 100%;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+
+
+.__mwx800{
+    max-width:800px;
+    margin: 0 auto;
+}
+.__mwx1180{
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+
+
+.wrap{
+    position: relative;
+}
+
+
+.btn{
+    display: inline-block;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.btn._text {
+    border-bottom: 1.5px solid #4481FC;
+    color:#999;
+    border-radius: unset;
+    width: fit-content;
+    padding:0 1px
+}
+.btn._circle {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+
+._w30 {
+    width: 30px;
+}
+._w35 {
+    width: 35px;
+}
+.btn._w50 {
+    width: 50px;
+}
+.btn._w60 {
+    width: 60px;
+}
+._w70 {
+    width: 70px;
+}
+._w90 {
+    width: 90px;
+}
+._w100 {
+    width: 100px;
+}
+._w200 {
+    width: 200px;
+}
+.btn._w120 {
+    width: 120px;
+}
+.btn._w140 {
+    width: 140px;
+}
+.btn._w160 {
+    width: 160px;
+}
+.btn._wFit {
+    width: fit-content;
+    padding: 0 8px;
+}
+
+._wFull {
+    width: 100%;
+}
+
+
+._h25 {
+    height: 25px;
+    line-height: 23px;
+}
+._h30 {
+    height: 30px;
+    line-height: 29px;
+}
+._h32 {
+    height: 32px;
+    line-height: 30px;
+}
+._h35 {
+    height: 35px;
+    line-height: 33px;
+}
+._h18 {
+    height: 18px;
+    line-height: 17px;
+}
+._h22 {
+    height: 22px;
+    line-height: 20px;
+}
+
+._h40 {
+    height: 40px;
+    line-height: 38px;
+    font-size: 1.6rem;
+}
+
+.btn.disabled {
+    cursor: default;
+}
+
+
+
+.btn._text {
+    padding: 0;
+    border-bottom: 2px solid #4481FC;
+    color:#111;
+    font-size: 1rem;
+    font-weight: 800;
+}
+.btn._text .icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-bottom: 1px;
+}
+
+
+
+
+.__style01 {
+    color: #F6D42A;
+}
+.__style011 {
+    background-color: #F6D42A;
+    color: #000;
+}
+.__style02{
+    color:#999
+}
+.__style021{
+    background-color: #111;
+    color: #eee;
+}
+.__style022{
+    color:#ddd
+}
+.__style023{
+    background-color: #555;
+    color: 
+    #ddd;
+}
+.__style024{
+    background-color: #999;
+    color: #ddd;
+}
+.__style025{
+    background-color: #eee;
+}
+
+.__style025{
+    background-color: #fff;
+    border: 1px solid #999;
+}
+.__style03{
+    color:#fff
+}
+.__style031{
+    background-color: #fff;
+    color:#000
+}
+
+
+
+
+
+
+
+.icon{
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+.icon.__arrowR{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+.icon.__menu {
+    background-image: url(../resources/icon-menuON@2x.png);
+}
+.btn.ON > .icon.__menu,
+.btn.NOW > .icon.__menu {
+    background-image: url(../resources/icon-menuOFF@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="1"]{
+    background-image: url(../resources/map/map-01@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="2"]{
+    background-image: url(../resources/map/map-02@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="3"]{
+    background-image: url(../resources/map/map-03@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="4"]{
+    background-image: url(../resources/map/map-04@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="5"]{
+    background-image: url(../resources/map/map-05@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="6"]{
+    background-image: url(../resources/map/map-06@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="7"]{
+    background-image: url(../resources/map/map-07@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="8"]{
+    background-image: url(../resources/map/map-08@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="9"]{
+    background-image: url(../resources/map/map-09@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="10"]{
+    background-image: url(../resources/map/map-10@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="11"]{
+    background-image: url(../resources/map/map-11@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="12"]{
+    background-image: url(../resources/map/map-12@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="13"]{
+    background-image: url(../resources/map/map-13@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="14"]{
+    background-image: url(../resources/map/map-14@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="15"]{
+    background-image: url(../resources/map/map-15@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="16"]{
+    background-image: url(../resources/map/map-16@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="17"]{
+    background-image: url(../resources/map/map-17@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="18"]{
+    background-image: url(../resources/map/map-18@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="19"]{
+    background-image: url(../resources/map/map-19@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="20"]{
+    background-image: url(../resources/map/map-20@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="21"]{
+    background-image: url(../resources/map/map-21@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="22"]{
+    background-image: url(../resources/map/map-22@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="23"]{
+    background-image: url(../resources/map/map-23@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="24"]{
+    background-image: url(../resources/map/map-24@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="25"]{
+    background-image: url(../resources/map/map-25@2x.png);
+}
+.seoulArea .mapBox .mapTile[data-map="26"]{
+    background-image: url(../resources/map/map-26@2x.png);
+}
+
+
+.seoulArea .mapBox .mapTile.HOVER[data-map="1"]{
+    background-image: url(../resources/map/HOVER/map-01@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="2"]{
+    background-image: url(../resources/map/HOVER/map-02@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="3"]{
+    background-image: url(../resources/map/HOVER/map-03@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="4"]{
+    background-image: url(../resources/map/HOVER/map-04@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="5"]{
+    background-image: url(../resources/map/HOVER/map-05@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="6"]{
+    background-image: url(../resources/map/HOVER/map-06@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="7"]{
+    background-image: url(../resources/map/HOVER/map-07@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="8"]{
+    background-image: url(../resources/map/HOVER/map-08@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="9"]{
+    background-image: url(../resources/map/HOVER/map-09@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="10"]{
+    background-image: url(../resources/map/HOVER/map-10@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="11"]{
+    background-image: url(../resources/map/HOVER/map-11@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="12"]{
+    background-image: url(../resources/map/HOVER/map-12@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="13"]{
+    background-image: url(../resources/map/HOVER/map-13@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="14"]{
+    background-image: url(../resources/map/HOVER/map-14@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="15"]{
+    background-image: url(../resources/map/HOVER/map-15@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="16"]{
+    background-image: url(../resources/map/HOVER/map-16@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="17"]{
+    background-image: url(../resources/map/HOVER/map-17@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="18"]{
+    background-image: url(../resources/map/HOVER/map-18@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="19"]{
+    background-image: url(../resources/map/HOVER/map-19@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="20"]{
+    background-image: url(../resources/map/HOVER/map-20@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="21"]{
+    background-image: url(../resources/map/HOVER/map-21@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="22"]{
+    background-image: url(../resources/map/HOVER/map-22@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="23"]{
+    background-image: url(../resources/map/HOVER/map-23@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="24"]{
+    background-image: url(../resources/map/HOVER/map-24@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="25"]{
+    background-image: url(../resources/map/HOVER/map-25@2x.png);
+}
+.seoulArea .mapBox .mapTile.HOVER[data-map="26"]{
+    background-image: url(../resources/map/HOVER/map-26@2x.png);
+}
+
+
+.seoulArea .mapBox .mapTile.ON[data-map="1"]{
+    background-image: url(../resources/map/ON/map-01@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="2"]{
+    background-image: url(../resources/map/ON/map-02@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="3"]{
+    background-image: url(../resources/map/ON/map-03@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="4"]{
+    background-image: url(../resources/map/ON/map-04@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="5"]{
+    background-image: url(../resources/map/ON/map-05@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="6"]{
+    background-image: url(../resources/map/ON/map-06@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="7"]{
+    background-image: url(../resources/map/ON/map-07@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="8"]{
+    background-image: url(../resources/map/ON/map-08@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="9"]{
+    background-image: url(../resources/map/ON/map-09@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="10"]{
+    background-image: url(../resources/map/ON/map-10@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="11"]{
+    background-image: url(../resources/map/ON/map-11@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="12"]{
+    background-image: url(../resources/map/ON/map-12@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="13"]{
+    background-image: url(../resources/map/ON/map-13@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="14"]{
+    background-image: url(../resources/map/ON/map-14@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="15"]{
+    background-image: url(../resources/map/ON/map-15@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="16"]{
+    background-image: url(../resources/map/ON/map-16@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="17"]{
+    background-image: url(../resources/map/ON/map-17@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="18"]{
+    background-image: url(../resources/map/ON/map-18@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="19"]{
+    background-image: url(../resources/map/ON/map-19@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="20"]{
+    background-image: url(../resources/map/ON/map-20@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="21"]{
+    background-image: url(../resources/map/ON/map-21@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="22"]{
+    background-image: url(../resources/map/ON/map-22@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="23"]{
+    background-image: url(../resources/map/ON/map-23@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="24"]{
+    background-image: url(../resources/map/ON/map-24@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="25"]{
+    background-image: url(../resources/map/ON/map-25@2x.png);
+}
+.seoulArea .mapBox .mapTile.ON[data-map="26"]{
+    background-image: url(../resources/map/ON/map-26@2x.png);
+}
+
+
+
+
+
+
+
+@media only screen and (max-width:900px) {
+    html {
+        font-size: 10px;
+    }
+}

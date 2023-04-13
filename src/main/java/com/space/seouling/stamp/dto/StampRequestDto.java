@@ -1,0 +1,16 @@
+package com.space.seouling.stamp.dto;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class StampRequestDto {
+
+    private Integer acti_id;
+    private String user_id;
+    private Integer seq;
+
+}

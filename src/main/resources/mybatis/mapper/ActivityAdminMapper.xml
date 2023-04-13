@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.space.seouling.activity.dao.ActivityAdminDao">
+    <insert id="insertActivity" parameterType="ActivityAdminRequestDto">
+        INSERT
+        INTO
+            ACTIVITY_TB(thmb,thmb_alt,acti_cd,addr_nm,str_addr,ttl,rpr_dsc,orgn_site,opr_prd_from,opr_prd_to)
+        VALUES
+            (#{thmb},#{thmb_alt},#{acti_cd},#{addr_nm},#{str_addr},#{ttl},#{rpr_dsc},#{orgn_site},#{opr_prd_from},#{opr_prd_to});
+    </insert>
+
+    <select id="selectAllActivity" resultType="ActivityAdminResponseDto">
+        SELECT
+               A.acti_id,A.addr_nm,A.thmb,A.thmb_alt,A.ttl,A.rpr_dsc,
+               A.opr_prd_from,A.opr_prd_to,A.act_yn,A.orgn_site,
+               IF(A.opr_prd_to > now() <![CDATA[&&]]> C.cd_cate != '장터','진행중',IF(C.cd_cate='장터','상시','종료')) AS keep_yn ,C.cd_cate AS acti_cd
+        FROM ACTIVITY_TB AS A
+                 JOIN COMMON_CD_TB AS C
+                      ON A.acti_cd = C.cmn_cd_id;
+    </select>
+
+    <select id="selectActivityCnt" resultType="Integer">
+        SELECT
+        COUNT(*)
+        FROM
+        ACTIVITY_TB
+    </select>
+
+    <delete id="deleteActivity" parameterType="Integer">
+        DELETE
+        FROM
+        ACTIVITY_TB
+        WHERE acti_id = #{acti_id}
+    </delete>
+
+    <update id="updateActivity" parameterType="ActivityAdminRequestDto">
+        UPDATE
+        ACTIVITY_TB
+        SET thmb=#{thmb}, thmb_alt=#{thmb_alt}, ttl=#{ttl}, acti_cd=#{acti_cd}, rpr_dsc=#{rpr_dsc}, orgn_site=#{orgn_site}, opr_prd_from=#{opr_prd_from},
+            opr_prd_to=#{opr_prd_to}, str_addr=#{str_addr}, addr_nm=#{addr_nm},
+            html_dtl=#{html_dtl},fin_mod_date=now(),str_addr=#{str_addr},addr_nm=#{addr_nm},addr_crd=#{addr_crd}
+        WHERE acti_id=#{acti_id}
+    </update>
+
+    <select id="selectActivity" resultType="ActivityAdminResponseDto" parameterType="Integer">
+        SELECT
+        *
+        FROM
+        ACTIVITY_TB
+        WHERE acti_id=#{acti_id}
+    </select>
+
+    <update id="updateActivityState" parameterType="Map">
+        UPDATE
+        ACTIVITY_TB
+        SET
+        act_yn=#{act_yn}
+        WHERE acti_id=#{acti_id}
+    </update>
+
+    <select id="selectActivityTitle" resultType="ActivityAdminResponseDto" parameterType="String">
+        SELECT
+        *
+        FROM
+        ACTIVITY_TB
+        WHERE
+        ttl=#{ttl}
+    </select>
+
+</mapper>

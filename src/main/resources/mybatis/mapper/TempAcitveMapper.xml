@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.space.seouling.main.mapper.ActiveMapper">
+    <insert id="save" parameterType="TempActive">
+        INSERT INTO ACTIVE(title, content)
+        VALUES (#{title}, #{content});
+    </insert>
+    <select id="findByIdList" parameterType="java.util.List" resultType="TempActive">
+        SELECT *
+        FROM ACTIVE
+        WHERE active_id IN
+        <foreach item="item" collection="list" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+    <select id="findList" resultType="TempActive">
+        SELECT *
+        FROM ACTIVE;
+    </select>
+    <update id="update" parameterType="TempActive">
+        UPDATE ACTIVE
+        SET title = #{title},
+            content = #{content},
+            date = #{date}
+        WHERE active_id = #{activeId};
+    </update>
+    <delete id="delete" parameterType="int">
+        DELETE
+        FROM ACTIVE
+        WHERE active_id = #{activeId};
+    </delete>
+<!--    <select id="count" resultType="int">-->
+<!--        SELECT COUNT(acti_id)-->
+<!--        FROM ACTIVE-->
+<!--        WHERE user_id = #{user_id};-->
+<!--    </select>-->
+<!--    <delete id="deleteLastOne" parameterType="string">-->
+<!--        DELETE-->
+<!--        FROM ACTIVE-->
+<!--        WHERE user_id = #{user_id}-->
+<!--        ORDER BY seq ASC-->
+<!--        LIMIT 1;-->
+<!--    </delete>-->
+<!--    <select id="findLastSeqByUserId" parameterType="string" resultType="int">-->
+<!--        SELECT seq-->
+<!--        FROM ACTIVE-->
+<!--        WHERE user_id = #{user_id}-->
+<!--        ORDER BY seq DESC-->
+<!--        LIMIT 1;-->
+<!--    </select>-->
+</mapper>

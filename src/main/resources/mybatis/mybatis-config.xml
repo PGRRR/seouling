@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+        <typeAliases>
+                <typeAlias alias="ActivityResponseDto" type="com.space.seouling.activity.dto.ActivityResponseDto"/>
+                <typeAlias alias="ActivityAdminResponseDto" type="com.space.seouling.activity.dto.ActivityAdminResponseDto"/>
+                <typeAlias alias="ActivityAdminRequestDto" type="com.space.seouling.activity.dto.ActivityAdminRequestDto"/>
+                <typeAlias alias="PageHandler" type="com.space.seouling.activity.dto.PageHandler"/>
+                <typeAlias alias="StampRequestDto" type="com.space.seouling.stamp.dto.StampRequestDto"/>
+                <typeAlias alias="StampResponseDto" type="com.space.seouling.stamp.dto.StampResponseDto"/>
+                <typeAlias alias="Activity" type="com.space.seouling.activity.domain.Activity"/>
+                <typeAlias alias="TempActive" type="com.space.seouling.main.domain.TempActive"/>
+        </typeAliases>
+</configuration>

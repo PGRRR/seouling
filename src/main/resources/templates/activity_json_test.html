@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <html lang="ko" xmlns:th="http://www.thymeleaf.org">
+</head>
+<body>
+<button id="transferBtn">삭제</button>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    let button = document.querySelector('#transferBtn');
+    let param = [
+        {
+            thmb: 'https://mcst.go.kr/attachFiles/cultureInfoCourt/localFestival/notifyFestival/1632717143772.JPG',
+            thmb_alt: '웰컴 대학로 관련 ',
+            acti_cd: 'A02',
+            addr_nm: '종로구',
+            str_addr: '대학로 일원',
+            ttl: '2022 웰컴 대',
+            rpr_dsc: '웰컴 대학로는 넌버벌 퍼포먼스, 전통공연, 뮤지컬, 연극 등다양한 장르의 한국 공연을 대학로에서 만나볼 수 있는 페스티벌로, 2017',
+            orgn_site: 'http://welcomedaehakro.com',
+            opr_prd_from: '2022. 9. 24.',
+            opr_prd_to: '2022. 10. 30.'
+        },
+        {
+            thmb: 'https://mcst.go.kr/attachFiles/cultureInfoCourt/localFestival/notifyFestival/1632717143772.JPG',
+            thmb_alt: ' 웰컴 대학로 관련 이미지 ',
+            acti_cd: 'A02',
+            addr_nm: '종로구',
+            str_addr: '대학로 일원',
+            ttl: '2022 웰컴 대학',
+            rpr_dsc: '웰컴 대학로는 넌버벌 퍼포먼스, 전통공연, 뮤지컬, 연극 등다양한 장르의 한국 공연을 대학로에서 만나볼 수 있는 페스티벌로, 2017',
+            orgn_site: 'http://welcomedaehakro.com',
+            opr_prd_from: '2022. 9. 24.',
+            opr_prd_to: '2022. 10. 30.'
+        },
+        {
+            thmb: 'https://mcst.go.kr/attachFiles/cultureInfoCourt/localFestival/notifyFestival/1632717143772.JPG',
+            thmb_alt: '2022 웰컴 대 이미지 ',
+            acti_cd: 'A02',
+            addr_nm: '종로구',
+            str_addr: '대학로 일원',
+            ttl: '2022 웰컴',
+            rpr_dsc: '웰컴 대학로는 넌버벌 퍼포먼스, 전통공연, 뮤지컬, 연극 등다양한 장르의 한국 공연을 대학로에서 만나볼 수 있는 페스티벌로, 2017',
+            orgn_site: 'http://welcomedaehakro.com',
+            opr_prd_from: '2022. 9. 24.',
+            opr_prd_to: '2022. 10. 30.'
+        }
+    ];
+    let jsonParam = JSON.stringify(param);
+    console.log(jsonParam);
+    button.addEventListener('click',function (){
+        $.ajax({
+            url : '/admin/contentAddJson',
+            type : 'POST',
+            cache: false,
+            data : jsonParam,
+            dataType: 'text',
+            contentType: 'application/json; charset=utf-8',
+            success : function (data){
+                console.log(data);
+                alert('등록이 성공했습니다.');
+            },
+            error : function (request, status, error){
+                console.log("code: " + request.status)
+                console.log("message: " + request.responseText)
+                console.log("error: " + error);
+                alert('등록이 실패했습니다.');
+            }
+        });
+    });
+</script>
+</html>

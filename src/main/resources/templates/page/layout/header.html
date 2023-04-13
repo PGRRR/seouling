@@ -1,0 +1,22 @@
+<!-- 퍼블리싱용 임시 위치 > 정상 : header안 -->
+<link type="text/css" rel="stylesheet" href="/common/css/reset.css?update=2210162304">
+<link type="text/css" rel="stylesheet" href="/common/css/font.css?update=2210162304">
+<link type="text/css" rel="stylesheet" href="/common/css/common.css?update=2210162304">
+<link type="text/css" rel="stylesheet" href="/common/css/layout.css?update=2210162304">
+<link type="text/css" rel="stylesheet" href="/common/css/contents.css?update=2210162304">
+<link type="text/css" rel="stylesheet" href="/common/css/animate.css?update=2210162304">
+<!-- <button class="btn __hamburger" onclick="openMenu()"><i></i><i></i><i></i></button> -->
+<header th:fragment="header">
+    <div class="wrap">
+        <button type="button" class="btn __menu" alt="메뉴 축소/확대" onclick="$('body').toggleClass('headerON');"><i class="icon __menu"></i></button>
+        <div class="cateBox">
+            <a href="/" class="btn" data-cate="intro" title="처음으로"><i class="icon"></i><span class="label">처음으로</span></a>
+            <a href="/stamp" class="btn" data-cate="stamp" title="내 스탬프판">
+                <i class="icon"></i><span class="label">내 스탬프판</span>
+                <span class="badge"></span>
+            </a>
+            <a href="/active" class="btn" data-cate="active" title="활동터 목록"><i class="icon"></i><span class="label">활동터 목록</span></a>
+            <a href="/share" class="btn" data-cate="share" title="공유하기"><i class="icon"></i><span class="label">공유하기</span></a>
+        </div>
+    </div>
+</header>

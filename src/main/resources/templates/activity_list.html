@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table tr > *:nth-child(1),
+        table tr > *:nth-child(2),
+        table tr > *:nth-child(3),
+        table tr > *:nth-child(6),
+        table tr > *:nth-child(7),
+        table tr > *:nth-child(8),
+        table tr > *:nth-child(9){
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<header data-include-path="/admin/main"></header>
+
+<section>
+    <div class="wrap">
+        <div class="frame _mw1000">
+            <div class="wrap">
+                <h1 th:text="|컨텐츠 목록(${listCnt}건)|"></h1>
+
+                <table>
+                    <colgroup>
+                        <col style="width:80px">
+                        <col style="width:80px">
+                        <col style="width:80px">
+                        <col style="width:120px">
+                        <col style="width:auto">
+                        <col style="width:100px">
+                        <col style="width:80px">
+                        <col style="width:100px">
+                        <col style="width:100px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>콘텐츠 No.</th>
+                            <th>분류</th>
+                            <th>지역구</th>
+                            <th>제목</th>
+                            <th>설명</th>
+                            <th>기간</th>
+                            <th>기간 상태</th>
+                            <th>노출 여부</th>
+                            <th>
+                                활동
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="list : ${activityList}">
+                            <td th:text="${list.acti_id}" class="acti_id"></td>
+                            <td th:text="${list.acti_cd}"></td>
+                            <td th:text="${list.addr_nm}"></td>
+
+                            <td title="{제목}">
+                                <div class="thm" th:style="'background-image:url('+ ${list.thmb} +');'"></div>
+                                <p class="textOver2" th:text="${list.ttl}"></p>
+                            </td>
+                            <td title="{설명}">
+                                <p class="textOver2" th:text="${list.rpr_dsc}"></p>
+                            </td>
+                            <td th:text="|${#dates.format(list.opr_prd_from, 'yyyy. MM. dd hh:mm')}-
+                                            ${#dates.format(list.opr_prd_to, 'yyyy. MM. dd hh:mm')}|"></td>
+                            <td th:text="${list.keep_yn}"></td>
+                            <td>
+                                <select class="act_yn" onchange="changeSelect()">
+                                    <option th:selected="${list.act_yn}=='1'" th:value="1">노출</option>
+                                    <option th:selected="${list.act_yn}=='0'" th:value="0">비노출</option>
+                                </select>
+                            </td>
+                            <td>
+                                <a th:href="|/admin/contentRead?acti_id=${list.acti_id}|" class="btn">상세</a>
+                                <a th:href="${list.orgn_site}" class="btn">원본 링크</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btnBox">
+                    <input type="file" title="엑셀 등록"/>
+                    <button type="button" class="btn">엑셀 업로드</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<script>
+
+    function changeSelect(target) {
+        let selectBox = document.querySelector(".act_yn");
+        let selectVal = selectBox.options[selectBox.selectedIndex].value;
+        let actiId = document.querySelector(".acti_id").innerText;
+        alert(actiId);
+        alert(selectVal);
+    }
+
+        //html include for UI Develop script - sys 220329
+    window.addEventListener('load', function () {
+        var allElements = document.getElementsByTagName('*');
+        Array.prototype.forEach.call(allElements, function (el) {
+            var includePath = el.dataset.includePath;
+            if (includePath) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        el.outerHTML = this.responseText;
+                    }
+                };
+                xhttp.open('GET', includePath, true);
+                xhttp.send();
+            }
+        });
+    });
+
+
+</script>
+</html>

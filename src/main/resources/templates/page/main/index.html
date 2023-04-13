@@ -1,0 +1,107 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>서울링</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="서울링">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="서울링">
+    <!-- <link rel="icon" href="../common/resources/favicon.ico" type="image/x-icon"> -->
+    <link type="text/css" rel="stylesheet" href="/common/css/reset.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/font.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/common.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/layout.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/contents.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/animate.css?update=2210162304">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/> -->
+    <script type="text/javascript" src="/common/js/jquery.min.js"></script>
+</head>
+<body data-loca="intro">
+<header th:include="/page/layout/header :: header"></header>
+<nav th:include="/page/layout/nav :: nav"></nav>
+<section>
+    <div class="secItem introSec">
+        <a href="/" class="logo"><i class="icon __logoW"></i></a>
+        <div class="titleBox __style03">
+            <h5 class="__style02">나만에 투어 지도를 만들어보세요</h5>
+            <h1><B>서울 여행,<Br/><span class="__style01">서울링</span> 투어</B></h1>
+            <a href="/stamp" class="btn _w200 _h40 __style011">시작하기</a>
+        </div>
+        <div class="seoulArea">
+            <div class="mapBox">
+            </div>
+        </div>
+    </div>
+</section>
+<footer th:include="page/layout/footer :: footer"></footer>
+<!-- <div data-include-path="../layout/popup.html"></div> -->
+</body>
+<script type="text/javascript" src="/common/js/common.js?update=2210162304"></script>
+<script>
+    mapLoading();
+    deckView('8', ["1", "2", "3"]);
+</script>
+<!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+<!-- <script>
+    var swiper = new Swiper(".swiper.__point", {
+      slidesPerView: "auto",
+      spaceBetween: 0,
+      pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        }
+    });
+    var swiper = new Swiper(".swiper.__service", {
+        slidesPerView: 4,
+        slidesPerGroup: 1,
+        spaceBetween: 30,
+        grabCursor: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+            breakpoints: {
+                // when window width is >= 1099px
+                600: {
+                slidesPerView: 1,
+                },
+                // when window width is >= 1099px
+                900: {
+                slidesPerView: 2,
+                },
+                // when window width is >= 1099px
+                1200: {
+                slidesPerView: 3,
+                }
+            }
+    });
+    var swiper = new Swiper(".swiper.__portfolio", {
+        slidesPerView: 4,
+        slidesPerGroup: 1,
+        centeredSlides: false,
+        spaceBetween: 30,
+        grabCursor: true,
+            breakpoints: {
+                // when window width is >= 1099px
+                600: {
+                slidesPerView: 1,
+                },
+                // when window width is >= 1099px
+                900: {
+                slidesPerView: 2,
+                },
+                // when window width is >= 1099px
+                1200: {
+                slidesPerView: 3,
+                }
+            }
+    });
+</script> -->
+</html>

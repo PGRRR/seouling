@@ -1,0 +1,1706 @@
+body {
+    background-color: #999;
+    padding-left: 80px;
+}
+html,body {
+    max-height: 100vh;
+    overflow: hidden;
+}
+    body.headerON {
+        padding-left: 40px;
+    }
+
+section .secItem{
+    position: relative;
+    padding: 120px 0 160px;
+    width: 100%;
+    height: 100%;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.secItem .titleBox{
+    text-align: center;
+    font-weight: 600;
+}
+.secItem .titleBox b,
+.secItem .textBox b {
+    font-weight: 800;
+}
+.secItem .titleBox h1{
+    font-size: 6rem;
+    line-height: 7rem;
+}
+.secItem .titleBox h2,
+.secItem .textBox h2 {
+    font-size: 3.8rem;
+    line-height: 4.2rem;
+    margin: 10px 0 25px;
+}
+.secItem .titleBox h3,
+.secItem .textBox h3 {
+    font-size: 3.2rem;
+    line-height: 4rem;
+}
+.secItem .titleBox h4,
+.secItem .textBox h4 {
+    font-size: 2.6rem;
+    line-height: 3.6rem;
+}
+.secItem .titleBox h5,
+.secItem .textBox h5 {
+    font-size: 2rem;
+    line-height: 2.8rem;
+}
+.secItem .titleBox h6 ,
+.secItem .textBox h6 {
+    font-size: 1.3rem;
+    line-height: 2.4rem;
+}
+
+.secItem .titleBox p,
+.secItem .textBox p {
+    font-size: 1rem;
+    line-height: 1.3rem;
+}
+
+
+
+
+
+body[data-loca="intro"] {
+    background-color: #333;
+}
+.secItem.introSec .logo {
+    width: 120px;
+    height: 40px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+.secItem.introSec .titleBox {
+    z-index: 2;
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    text-align: left;
+    transform: translateY(-55%);
+}
+.secItem.introSec .titleBox h1{
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+.secItem.introSec .seoulArea {
+    z-index: 1;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0;
+    padding-bottom: 60%;
+    width: 60%;
+}
+
+
+
+.sideArea{
+    width: 420px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #f5f5f5;
+}
+body.headerON .sideArea{
+    left: -100%;
+}
+.sideArea .headBox{
+    position: relative;
+}
+.sideArea .headBox > .wrap{
+    z-index: 6;
+    position: relative;
+    padding: 0 20px;
+    background-color: #fff;
+}
+.sideArea .headBox .titleBox{
+    text-align: left;
+    padding: 25px 0;
+}
+.sideArea .headBox .titleBox > *{
+    display: inline-block;
+    vertical-align: bottom;
+}
+.sideArea .headBox .titleBox h5{
+    height: 30px;
+    margin-right: 5px;
+}
+.sideArea .headBox .controlBox{
+    padding:20px 0;
+}
+
+
+.filterBox{
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-100%);
+    background-color: #333;
+    padding:20px;
+}
+
+.filterBox.ON{
+    transform: translateY(100%);
+}
+
+.filterBox .formBox + .btnBox{
+    white-space: nowrap;
+}
+.filterBox .formBox + .btnBox .btn:last-child{
+    width: calc(100% - 40px);
+    margin-left: 5px;
+}
+
+.filterBox .formBox + .btnBox> * {
+    display: inline-block;
+     vertical-align: middle;
+}
+
+
+.sideArea .contentBox{
+    padding: 20px;
+
+    position: relative;
+    height: calc(100vh - 155px);
+    overflow-y: auto;
+}
+.sideArea .contentBox li.__empty{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    font-size: 2rem;
+    transform: translateY(-55%);
+}
+.sideArea .contentBox .activeList .activeItem {
+    z-index: 1;
+    position: relative;
+    padding:10px 10px 15px;
+    background-color: #fff;;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.sideArea .contentBox .activeList .activeItem > .wrap{
+    position: relative;
+    padding-left: 100px;
+    min-height: 100px;
+}
+
+.sideArea .contentBox .activeList .activeItem .badge {
+    display: none;
+    z-index: 3;
+    position: absolute;
+    left: -8px;
+    top: -8px;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+.sideArea .contentBox .activeList .activeItem .thm{
+    width: 100px;
+    height: 100px;
+    border-radius: 6px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.sideArea .contentBox .activeList .activeItem .textBox{
+    padding-left: 10px;
+}
+.sideArea .contentBox .activeList .activeItem .textBox p {
+    overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #333;
+}
+
+.sideArea .contentBox .activeList .activeItem .dateBox{
+    position: absolute;
+    bottom: 3px;
+    padding-top: 15px;
+    padding-left: 10px;
+    white-space: nowrap;
+}
+.sideArea .contentBox .activeList .activeItem .dateBox .label {
+    font-size: .8rem;
+    font-weight: 600;
+    color:#999;
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+.sideArea .contentBox .activeList .activeItem .dateBox h5 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    display: inline-block;
+    vertical-align: bottom;
+    letter-spacing: -0.5px;
+}
+.sideArea .contentBox .activeList .activeItem .dateBox h6 {
+    font-size: .9rem;
+    font-weight: 800;
+    margin-left: 2px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.sideArea .contentBox .activeList .activeItem .btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+}
+.sideArea .contentBox .activeList .activeItem .graph {
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    height: 6px;
+    transform: translateY(100%);
+    background-color: #eee;
+    border-radius: 0 0 5px 5px;
+    width: calc(100% + 20px);
+    padding: 1.5px;
+}
+
+.sideArea .contentBox .activeList .activeItem .graph .bar {
+    height: 100%;
+    border-radius: 2px;
+}
+
+
+.sideArea .contentBox .activeList .activeItem.NOGRAPH{
+    padding-bottom: 10px;
+}
+.sideArea .contentBox .activeList .activeItem.NOGRAPH .graph{
+    display: none;
+}
+
+.sideArea .contentBox .activeList .activeItem.SELECT{
+    border:1px solid #F6D42A
+}
+.sideArea .contentBox .activeList .activeItem.SELECT .badge {
+    display: block;
+}
+.sideArea .contentBox .activeList .activeItem.SELECT .btn{
+    background-color: #ddd;
+}
+
+
+.sideArea .contentBox .activeList .activeItem.ON {
+    background-color: #FEFBE9;
+}
+
+.sideArea .contentBox .activeList .activeItem.HOVER {
+    transform: translateY(-5px);
+    z-index: 3;
+}
+
+.sideArea .contentBox .activeList[data-type="block"] .activeItem {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 8px;
+    width: calc(50% - 7px);
+    margin-bottom: 10px;
+}
+.sideArea .contentBox .activeList[data-type="block"] .activeItem:nth-child(2n) {
+    margin-right: unset;
+}
+.sideArea .contentBox .activeList[data-type="block"] .activeItem > .wrap {
+    padding-left: unset;
+}
+.sideArea .contentBox .activeList[data-type="block"] .activeItem .thm{
+    position: relative;
+    width: 100%;
+    height: 140px;
+}
+.sideArea .contentBox .activeList[data-type="block"] .activeItem .dateBox{
+    position: relative;
+    bottom: unset;
+    margin-top: 12px;
+    padding-left: unset;
+}
+.sideArea .contentBox .activeList[data-type="block"] .activeItem .dateBox .label{
+    left: 0;
+}
+.sideArea .contentBox .activeList[data-type="block"] .activeItem .textBox{
+    padding-left: unset;
+}
+.sideArea .contentBox .activeList[data-type="block"] .activeItem .dateBox h6{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.sideArea .contentBox .activeList[data-type="block"] .activeItem .btn{
+    top: 5px;
+    right:5px;
+    bottom: unset;
+}
+
+
+
+
+
+
+.sideArea .contentBox .stampList{
+    padding-bottom: 30px;
+    position: relative;
+}
+.sideArea .contentBox .stampList::before{
+    content: '';
+    width: 1px;
+    border-right: 1px dashed #999;
+    height: calc(100% - 80px - 20px);
+    top: 60px;
+    left: 11px;
+
+    position: absolute;
+}
+.sideArea .contentBox .stampList .stampItem {
+    z-index: 1;
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 50px;
+}
+
+.sideArea .contentBox .stampList .stampItem.HOVER {
+    transform: translateY(-5px);
+    z-index: 3;
+}
+.sideArea .contentBox .stampList .stampItem.STAMP .thm {
+    opacity: .3;
+}
+.sideArea .contentBox .stampList .stampItem::before {
+    content: '';
+    width: 100px;
+    position: absolute;
+    height: 1px;
+    background-color: #aaa;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    left: 0;
+    z-index: -1;
+}
+.sideArea .contentBox .stampList .stampItem > .wrap{
+    position: relative;
+    padding:10px 10px 10px 80px;
+    background-color: #fff;;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    z-index: 3;
+    min-height: 90px;
+}
+
+.sideArea .contentBox .stampList .stampItem .badge {
+    z-index: 1;
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: grab;
+}
+.sideArea .contentBox .stampList .stampItem .thm{
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.sideArea .contentBox .stampList .stampItem .textBox{
+    padding-left: 10px;
+}
+.sideArea .contentBox .stampList .stampItem .textBox p {
+    overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  color: #333;
+}
+
+.sideArea .contentBox .stampList .stampItem .dateBox{
+    position: absolute;
+    bottom: 10px;
+    white-space: nowrap;
+    text-align: right;
+    width: calc(100% - 90px);
+}
+.sideArea .contentBox .stampList .stampItem .dateBox .label {
+    font-size: .8rem;
+    font-weight: 600;
+    color:#999;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+}
+.sideArea .contentBox .stampList .stampItem .dateBox h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: inline-block;
+    vertical-align: bottom;
+    letter-spacing: -0.5px;
+}
+
+
+.sideArea .contentBox + .dropBox {
+    /* display: none; */
+    z-index: 5;
+    width: 100%;
+    height: 80px;
+    color: #fff;
+    line-height: 78px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+}
+.sideArea .contentBox + .dropBox.ON {
+    display: block;
+}
+.sideArea .contentBox + .dropBox .icon{
+    position: absolute;
+    left: 16px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #999;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.sideArea .contentBox + .dropBox.ON .icon{
+    width: 40px;
+    height: 40px;
+    left: 10px;
+}
+
+.seoulArea{
+    z-index: 10;
+    position: absolute;
+    width: calc(100% - 420px);
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+body.headerON .seoulArea{
+    width: 100%;
+}
+
+.seoulArea .controlBox{
+    z-index: 2;
+    position: absolute;
+    left: 25px;
+    top: 25px;
+}
+.seoulArea .controlBox .stateBox {
+    padding: 5px 15px 5px 5px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+.seoulArea .controlBox .stateBox > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+.seoulArea .controlBox .stateBox .logo {
+    width: 100px;
+    height: 35px;
+}
+.seoulArea .controlBox .stateBox h5 {
+    font-size: 1.3rem;
+    margin-left: 10px;
+}
+
+
+
+.seoulArea .controlBox .maptypeBox[data-state="btn1"] .bg {
+    left: -2px;
+    width: 47%;
+}
+.seoulArea .controlBox .maptypeBox[data-state="btn2"]{
+    padding-right: 2px;
+}
+.seoulArea .controlBox .maptypeBox[data-state="btn2"] .bg {
+    left: 40%;
+    width: 58%;
+}
+
+.seoulArea .controlBox .shareBtn {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+}
+
+
+.seoulArea .mapBox{
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-45%);
+    width: 80vh;
+    height: 80vh;
+}
+
+.seoulArea .mapBox > .wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.seoulArea .mapBox .mapTile{
+    position: absolute;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.seoulArea .mapBox .mapTile > .wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.seoulArea .mapBox .mapTile .status{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+
+}
+.seoulArea .mapBox .mapTile .status h6{
+    margin-bottom: 3px;
+    font-size: 1rem;
+}
+.seoulArea .mapBox .mapTile .status h4{
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+.seoulArea .mapBox .mapTile.ON .status h4 span{
+    color: #fff;
+}
+.seoulArea .mapBox .mapTile[data-map="1"] .status{    top:62%;   left: 39%;}
+.seoulArea .mapBox .mapTile[data-map="3"] .status{    top: 53%;    left: 44%;}
+.seoulArea .mapBox .mapTile[data-map="4"] .status{    top: 46%;    left: 58%;}
+.seoulArea .mapBox .mapTile[data-map="5"] .status{    top: 31%;    left:24%;}
+.seoulArea .mapBox .mapTile[data-map="6"] .status{    top: 64%;}
+.seoulArea .mapBox .mapTile[data-map="7"] .status{    left: 63%;}
+.seoulArea .mapBox .mapTile[data-map="8"] .status{    left:44%;}
+.seoulArea .mapBox .mapTile[data-map="9"] .status{    top:56%;}
+.seoulArea .mapBox .mapTile[data-map="10"] .status{    top: 61%;    left: 55%;}
+.seoulArea .mapBox .mapTile[data-map="11"] .status > *{ display: inline-block; vertical-align: bottom;}
+.seoulArea .mapBox .mapTile[data-map="11"] .status h4{ margin-left: 5px;}
+.seoulArea .mapBox .mapTile[data-map="15"] .status{    top: 56%;}
+.seoulArea .mapBox .mapTile[data-map="16"] .status{    top: 63%;}
+.seoulArea .mapBox .mapTile[data-map="16"] .status > *{ display: inline-block; vertical-align: bottom;}
+.seoulArea .mapBox .mapTile[data-map="16"] .status h4{ margin-left: 5px;}
+.seoulArea .mapBox .mapTile[data-map="19"] .status{    top: 30%;    left: 47%;}
+
+.seoulArea .mapBox .mapTile[data-map="20"] .status{    top: 42%;    left: 26%;}
+.seoulArea .mapBox .mapTile[data-map="21"] .status{    left: 38%;}
+.seoulArea .mapBox .mapTile[data-map="23"] .status{    top: 41%;}
+.seoulArea .mapBox .mapTile[data-map="24"] .status{    left: 31%;}
+.seoulArea .mapBox .mapTile[data-map="25"] .status{    left: 55%;}
+
+
+
+.seoulArea .mapBox .mapTile .content{
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.seoulArea .mapBox .mapTile .content .single{
+    position: absolute;
+    /* top: 50%; */
+    left: -10%;
+    transform: translateX(-100%);
+}
+.seoulArea .mapBox .mapTile[data-map="1"] ~ .mapTile[data-map="12"] .content .single {
+    top: 0;
+
+}
+.seoulArea .mapBox .mapTile[data-map="13"] ~ .mapTile .content .single {
+    top: unset;
+    bottom: 0;
+}
+.seoulArea .mapBox .mapTile[data-map="13"] ~ .mapTile .content .deck {
+    top: unset;
+    bottom: 50%;
+    transform: translate(-50%,-50px);
+    
+    transform-origin: 50% 100%;
+}
+.seoulArea .mapBox .mapTile .content .single > .wrap,
+.seoulArea .mapBox .mapTile .content .deck > .wrap{
+    position: relative;
+    padding:10px;
+    background-color: #fff;;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.1);
+}
+.seoulArea .mapBox .mapTile .content .contentBox{
+    position: relative;
+}
+
+.seoulArea .mapBox .mapTile .content .thm{
+    width: 240px;
+    height: 200px;
+    border-radius: 6px;
+    background-size: cover;
+    background-position: center;
+}
+
+.seoulArea .mapBox .mapTile .content .infoBox {
+    padding: 8px 12px 15px;
+    margin-top: 8px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+.seoulArea .mapBox .mapTile .content .textBox p {
+    overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #333;
+  margin-top: 5px;
+}
+
+.seoulArea .mapBox .mapTile .content .dateBox{
+    padding-top: 15px;
+    position: relative;
+    text-align: right;
+    margin-top: 15px;
+}
+.seoulArea .mapBox .mapTile .content .dateBox .label {
+    font-size: .8rem;
+    font-weight: 600;
+    color:#999;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.seoulArea .mapBox .mapTile .content .dateBox h5 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    display: inline-block;
+    vertical-align: bottom;
+    letter-spacing: -0.5px;
+}
+.seoulArea .mapBox .mapTile .content .dateBox h6 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: .9rem;
+    font-weight: 800;
+    margin-left: 2px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.seoulArea .mapBox .mapTile .content .btnBox {
+    margin-top: 10px;
+
+    white-space: nowrap;
+}
+.seoulArea .mapBox .mapTile .content .btnBox .btn{
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 10px;
+}
+.seoulArea .mapBox .mapTile .content .btnBox .btn:last-child {
+    width: calc(100% - 40px);
+    margin-left: 3px;
+}
+.seoulArea .mapBox .mapTile .content .graph {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 6px;
+    background-color: #eee;
+    border-radius: 0 0 5px 5px;
+    width: 100%;
+    padding: 1.5px;
+}
+.seoulArea .mapBox .mapTile .content .graph .bar {
+    height: 100%;
+    border-radius: 2px;
+}
+
+.seoulArea .mapBox .mapTile .content .deck {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    transform-origin: 50% 0;
+}
+.seoulArea .mapBox .mapTile .content .deck.HOVER {
+    z-index: 9;
+}
+
+
+
+.seoulArea .mapBox .mapTile .content[data-count="2"] .deck:nth-child(1) {
+    transform: translateX(-50%) rotate(-5deg);
+}
+.seoulArea .mapBox .mapTile .content[data-count="2"] .deck:nth-child(2) {
+    transform: translateX(-50%) rotate(5deg);
+}
+
+
+.seoulArea .mapBox .mapTile .content[data-count="3"] .deck:nth-child(1) {
+    transform: translateX(-50%) rotate(-10deg);
+}
+.seoulArea .mapBox .mapTile .content[data-count="3"] .deck:nth-child(3) {
+    transform: translateX(-50%) rotate(10deg);
+}
+
+
+
+.seoulArea .mapBox .mapTile .content[data-count="4"] .deck:nth-child(1) {
+    transform: translateX(-50%) rotate(-15deg);
+}
+.seoulArea .mapBox .mapTile .content[data-count="4"] .deck:nth-child(2) {
+    transform: translateX(-50%) rotate(-5deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="4"] .deck:nth-child(3) {
+    transform: translateX(-50%) rotate(5deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="4"] .deck:nth-child(4) {
+    transform: translateX(-50%) rotate(15deg);
+}
+
+
+
+
+
+.seoulArea .mapBox .mapTile .content[data-count="5"] .deck:nth-child(1) {
+    transform: translateX(-50%) rotate(-20deg);
+}
+.seoulArea .mapBox .mapTile .content[data-count="5"] .deck:nth-child(2) {
+    transform: translateX(-50%) rotate(-10deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="5"] .deck:nth-child(4) {
+    transform: translateX(-50%) rotate(10deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="5"] .deck:nth-child(5) {
+    transform: translateX(-50%) rotate(20deg);
+}
+
+
+
+
+
+
+.seoulArea .mapBox .mapTile .content[data-count="6"] .deck:nth-child(1) {
+    transform: translateX(-50%) rotate(-25deg);
+}
+.seoulArea .mapBox .mapTile .content[data-count="6"] .deck:nth-child(2) {
+    transform: translateX(-50%) rotate(-15deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="6"] .deck:nth-child(3) {
+    transform: translateX(-50%) rotate(-5deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="6"] .deck:nth-child(4) {
+    transform: translateX(-50%) rotate(5deg);
+}
+
+
+.seoulArea .mapBox .mapTile .content[data-count="6"] .deck:nth-child(5) {
+    transform: translateX(-50%) rotate(15deg);
+}
+
+
+.seoulArea .mapBox .mapTile .content[data-count="6"] .deck:nth-child(6) {
+    transform: translateX(-50%) rotate(25deg);
+}
+
+
+
+
+
+
+.seoulArea .mapBox .mapTile .content[data-count="7"] .deck:nth-child(1) {
+    transform: translateX(-50%) rotate(-30deg);
+}
+.seoulArea .mapBox .mapTile .content[data-count="7"] .deck:nth-child(2) {
+    transform: translateX(-50%) rotate(-20deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="7"] .deck:nth-child(3) {
+    transform: translateX(-50%) rotate(-10deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="7"] .deck:nth-child(5) {
+    transform: translateX(-50%) rotate(10deg);
+}
+
+
+.seoulArea .mapBox .mapTile .content[data-count="7"] .deck:nth-child(6) {
+    transform: translateX(-50%) rotate(20deg);
+}
+
+
+.seoulArea .mapBox .mapTile .content[data-count="7"] .deck:nth-child(7) {
+    transform: translateX(-50%) rotate(30deg);
+}
+
+
+
+
+.seoulArea .mapBox .mapTile .content[data-count="8"] .deck:nth-child(1) {
+    transform: translateX(-50%) rotate(-35deg);
+}
+.seoulArea .mapBox .mapTile .content[data-count="8"] .deck:nth-child(2) {
+    transform: translateX(-50%) rotate(-25deg);
+}
+.seoulArea .mapBox .mapTile .content[data-count="8"] .deck:nth-child(3) {
+    transform: translateX(-50%) rotate(-15deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="8"] .deck:nth-child(4) {
+    transform: translateX(-50%) rotate(-5deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="8"] .deck:nth-child(5) {
+    transform: translateX(-50%) rotate(5deg);
+}
+
+
+.seoulArea .mapBox .mapTile .content[data-count="8"] .deck:nth-child(6) {
+    transform: translateX(-50%) rotate(15deg);
+}
+
+
+.seoulArea .mapBox .mapTile .content[data-count="8"] .deck:nth-child(7) {
+    transform: translateX(-50%) rotate(25deg);
+}
+
+
+.seoulArea .mapBox .mapTile .content[data-count="8"] .deck:nth-child(8) {
+    transform: translateX(-50%) rotate(35deg);
+}
+
+
+
+
+
+.seoulArea .mapBox .mapTile .content[data-count="9"] .deck:nth-child(1) {
+    transform: translateX(-50%) rotate(-40deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="9"] .deck:nth-child(2) {
+    transform: translateX(-50%) rotate(-30deg);
+}
+.seoulArea .mapBox .mapTile .content[data-count="9"] .deck:nth-child(3) {
+    transform: translateX(-50%) rotate(-20deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="9"] .deck:nth-child(4) {
+    transform: translateX(-50%) rotate(-10deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="9"] .deck:nth-child(6) {
+    transform: translateX(-50%) rotate(10deg);
+}
+
+
+.seoulArea .mapBox .mapTile .content[data-count="9"] .deck:nth-child(7) {
+    transform: translateX(-50%) rotate(20deg);
+}
+
+
+.seoulArea .mapBox .mapTile .content[data-count="9"] .deck:nth-child(8) {
+    transform: translateX(-50%) rotate(30deg);
+}
+
+
+
+.seoulArea .mapBox .mapTile .content[data-count="9"] .deck:nth-child(9) {
+    transform: translateX(-50%) rotate(40deg);
+}
+
+
+
+.seoulArea .mapBox .mapTile .content[data-count="9"] .deck:nth-child(7) {
+    transform: translateX(-50%) rotate(30deg);
+}
+
+
+
+.seoulArea .mapBox .mapTile .content[data-count="10"] .deck:nth-child(1) {
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="10"] .deck:nth-child(2) {
+    transform: translateX(-50%) rotate(-35deg);
+}
+.seoulArea .mapBox .mapTile .content[data-count="10"] .deck:nth-child(3) {
+    transform: translateX(-50%) rotate(-25deg);
+}
+.seoulArea .mapBox .mapTile .content[data-count="10"] .deck:nth-child(4) {
+    transform: translateX(-50%) rotate(-15deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="10"] .deck:nth-child(5) {
+    transform: translateX(-50%) rotate(-5deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="10"] .deck:nth-child(6) {
+    transform: translateX(-50%) rotate(5deg);
+}
+
+
+.seoulArea .mapBox .mapTile .content[data-count="10"] .deck:nth-child(7) {
+    transform: translateX(-50%) rotate(15deg);
+}
+
+
+.seoulArea .mapBox .mapTile .content[data-count="10"] .deck:nth-child(8) {
+    transform: translateX(-50%) rotate(25deg);
+}
+
+
+.seoulArea .mapBox .mapTile .content[data-count="10"] .deck:nth-child(9) {
+    transform: translateX(-50%) rotate(35deg);
+}
+
+.seoulArea .mapBox .mapTile .content[data-count="10"] .deck:nth-child(10) {
+    transform: translateX(-50%) rotate(45deg);
+}
+
+
+
+
+
+
+
+
+.seoulArea .mapBox .mapTile .content .deck > .wrap {
+    padding-bottom: 15px;
+}
+.seoulArea .mapBox .mapTile .content .deck .thm {
+    width: 200px;
+    height: 180px;
+}
+.seoulArea .mapBox .mapTile .content .deck .textBox{
+    padding-top: 10px;
+}
+.seoulArea .mapBox .mapTile .content .deck .graph{
+    bottom: -15px;
+    width: calc(100% + 20px);
+    left: -10px;
+}
+
+.seoulArea .mapBox .mapTile .content .deck .btn{
+    position: absolute;
+    border-radius: 10px;
+    right: 6px;
+}
+.seoulArea .mapBox .mapTile .content .deck .btn.detailBtn{
+
+    top: 6px;
+}
+.seoulArea .mapBox .mapTile .content .deck .btn.stampBtn{
+    top: 144px;
+}
+
+
+.seoulArea .mapBox .mapTile .content .deck.STAMP .thm {
+    opacity: .3;
+}
+.seoulArea .mapBox .mapTile .stampBox{
+    z-index: 3;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px 10px 5px;
+    width: max-content;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    display: none;
+    transform: translate(-50%,-50%);
+}
+.seoulArea .mapBox .mapTile.NOW .stampBox{
+    z-index: 5;
+}
+.seoulArea .mapBox .mapTile .stampBox.GET{
+    display: block;
+}
+.seoulArea .mapBox .mapTile .stampBox::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0px;
+    height: 0px;
+    border-bottom: calc( 10px * 1.732 ) solid #fff;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    z-index: -1;
+  }
+  
+.seoulArea .mapBox .mapTile .stampBox[data-count="4"]{
+    max-width: 120px;
+}
+.seoulArea .mapBox .mapTile .stampBox[data-count="5"],
+.seoulArea .mapBox .mapTile .stampBox[data-count="6"],
+.seoulArea .mapBox .mapTile .stampBox[data-count="7"],
+.seoulArea .mapBox .mapTile .stampBox[data-count="8"],
+.seoulArea .mapBox .mapTile .stampBox[data-count="9"]{
+    max-width: 185px;
+}
+.seoulArea .mapBox .mapTile .stampBox[data-count="10"]{
+    max-width: 295px;
+}
+
+
+.seoulArea .mapBox .mapTile .stampBox .stamp {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    margin:0 2.5px 5px;
+}
+.seoulArea .mapBox .mapTile .stampBox .stamp > .btn {
+    z-index: 1;
+    position: relative;
+    width: 50px;
+    height: 30px;
+    background-color: #eee;
+}
+.seoulArea .mapBox .mapTile .stampBox .stamp > .btn.ON {
+    background-color: #F6D42A;
+}
+.seoulArea .mapBox .mapTile .stampBox .content {
+    z-index: 10;
+    display: none;
+    top: 5px;
+
+}
+.seoulArea .mapBox .mapTile .stampBox .stamp.HOVER  .content {
+    display: block;
+}
+
+.seoulArea .mapBox .mapTile .stampBox .stamp.HOVER {
+    z-index: 3;
+}
+.seoulArea .mapBox .mapTile[data-map="1"]{
+    width: 15.9%;
+    height: 23.9%;
+
+    top: 4.7%;
+    left: 52.7%;
+}
+.seoulArea .mapBox .mapTile[data-map="2"]{
+    
+    width: 11.6%;
+    height: 21.9%;
+    
+    top: 0%;
+    left: 58.7%;
+}
+.seoulArea .mapBox .mapTile[data-map="3"]{
+    
+    width: 16.3%;
+    height: 27.8%;
+    
+    top: .3%;
+    left: 67.8%;
+}
+.seoulArea .mapBox .mapTile[data-map="4"]{
+    
+    width: 19.6%;
+    height: 25.8%;
+    
+    top: 13.1%;
+    left: 28.2%;
+}
+.seoulArea .mapBox .mapTile[data-map="5"]{
+    
+    width: 16.9%;
+    height: 21.9%;
+    
+    top: 21.4%;
+    left: 45%;
+}
+.seoulArea .mapBox .mapTile[data-map="6"]{
+    
+    width: 23.5%;
+    height: 19.9%;
+    
+    top: 20.1%;
+    left: 50.4%;
+}
+.seoulArea .mapBox .mapTile[data-map="7"]{
+    
+    width: 12.9%;
+    height: 14.7%;
+    
+    top: 31.3%;
+    left: 62.1%;
+}
+.seoulArea .mapBox .mapTile[data-map="8"]{
+    
+    width: 11%;
+    height: 16.2%;
+    
+    top: 26.3%;
+    left: 74.2%;
+}
+.seoulArea .mapBox .mapTile[data-map="9"]{
+    
+    width: 25.8%;
+    height: 20.4%;
+    
+    top: 34.5%;
+    left: 21.1%;
+}
+.seoulArea .mapBox .mapTile[data-map="10"]{
+    width: 14.4%;
+    height: 15.5%;
+    
+    top: 30.6%;
+    left: 33.4%;
+}
+.seoulArea .mapBox .mapTile[data-map="11"]{
+    width: 15.5%;
+    height: 7.9%;
+    
+    top: 42.2%;
+    left: 46.4%;
+}
+.seoulArea .mapBox .mapTile[data-map="12"]{
+    width: 14.8%;
+    height: 13.4%;
+    
+    top: 42.5%;
+    left: 58.7%;
+}
+.seoulArea .mapBox .mapTile[data-map="13"]{
+    width: 12%;
+    height: 15.1%;
+    
+    top: 41.8%;
+    left: 70.6%;
+}
+.seoulArea .mapBox .mapTile[data-map="14"]{
+    width: 16.7%;
+    height: 12.7%;
+    
+    top: 48.2%;
+    left: 42.6%;
+}
+.seoulArea .mapBox .mapTile[data-map="15"]{
+    width: 26.2%;
+    height: 24.4%;
+    
+    top: 30.6%;
+    left: 0%;
+}
+.seoulArea .mapBox .mapTile[data-map="16"]{
+    width: 16%;
+    height: 13.7%;
+    
+    top: 49.2%;
+    left: 12.1%;
+}
+.seoulArea .mapBox .mapTile[data-map="17"]{
+    width: 12.2%;
+    height: 22.4%;
+    
+    top: 48.2%;
+    left: 26.3%;
+}
+.seoulArea .mapBox .mapTile[data-map="18"]{
+    width: 5.6%;
+    height: 4.5%;
+    
+    top: 54%;
+    left: 36.8%;
+}
+.seoulArea .mapBox .mapTile[data-map="19"]{
+    width: 19.4%;
+    height: 14.1%;
+    
+    top: 59.4%;
+    left: 32.3%;
+}
+.seoulArea .mapBox .mapTile[data-map="20"]{
+    width: 30%;
+    height: 31.3%;
+    
+    top: 57.6%;
+    left: 49.2%;
+}
+.seoulArea .mapBox .mapTile[data-map="21"]{
+    width: 27.3%;
+    height: 24.9%;
+    
+    top: 55.6%;
+    left: 58.6%;
+}
+.seoulArea .mapBox .mapTile[data-map="22"]{
+    width: 21.7%;
+    height: 26%;
+    
+    top: 51.6%;
+    left: 72.5%;
+}
+.seoulArea .mapBox .mapTile[data-map="23"]{
+    width: 15.9%;
+    height: 18.5%;
+    
+    top: 41.3%;
+    left: 84%;
+}
+.seoulArea .mapBox .mapTile[data-map="24"]{
+    width: 19.7%;
+    height: 13.3%;
+    
+    top: 61%;
+    left: 10%;
+}
+.seoulArea .mapBox .mapTile[data-map="25"]{
+    width: 11.8%;
+    height: 16.23%;
+    
+    top: 70%;
+    left: 24.5%;
+}
+.seoulArea .mapBox .mapTile[data-map="26"]{
+    width: 21%;
+    height: 18.1%;
+    
+    top: 67.7%;
+    left: 32.4%;
+}
+
+
+
+
+body[data-loca="share"]{
+    background-color: #FEFBE9;
+}
+.secItem.shareSec .titleBox {
+    z-index:15;
+    position: absolute;
+    left: 40px;
+    top: 90px;
+    text-align: left;
+}
+.secItem.shareSec .titleBox h2{
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.secItem.shareSec .logo {
+    width: 120px;
+    height: 40px;
+    position: absolute;
+    left: 40px;
+    top: 25px;
+    background-color: #999;
+}
+
+.spreadList {
+    z-index: 12;
+    position: absolute;
+    top: 52vh;
+    left: 20px;
+    transform: rotate(-5deg);
+    transform-origin: 50% 50%;
+    width: 50vh;
+    height: 50vh;
+}
+.spreadList .deck {
+    z-index: 1;
+    width: 180px;
+    height: 50vh;
+    transform-origin: 80% 100%;
+    position: absolute;
+    left: 10vh;
+    bottom: 10vh;
+}
+.spreadList .deck:nth-child(1),
+.spreadList .deck:nth-child(10) {
+    transform:rotate(-10deg) ;
+}
+.spreadList .deck:nth-child(2),
+.spreadList .deck:nth-child(9) {
+    transform:rotate(20deg) ;
+}
+.spreadList .deck:nth-child(3),
+.spreadList .deck:nth-child(8) {
+    transform:rotate(40deg) ;
+}
+.spreadList .deck:nth-child(4),
+.spreadList .deck:nth-child(7) {
+    transform:rotate(60deg) ;
+}
+.spreadList .deck:nth-child(5), 
+.spreadList .deck:nth-child(6) {
+    transform:rotate(80deg) ;
+}
+.spreadList .deck:nth-child(5) ~ .deck{
+    left: 0;
+    bottom:0;
+}
+
+.spreadList .deck.HOVER{
+    bottom: 15vh;
+    z-index: 2;
+
+}
+.spreadList .deck.deck.HOVER:nth-child(1) > .wrap,
+.spreadList .deck.deck.HOVER:nth-child(10) > .wrap{
+    transform: rotate(10deg) translateY(-20%);
+}
+.spreadList .deck.deck.HOVER:nth-child(2) > .wrap,
+.spreadList .deck.deck.HOVER:nth-child(9) > .wrap{
+    transform: rotate(-10deg) translateY(-20%);
+}
+.spreadList .deck.deck.HOVER:nth-child(3) > .wrap,
+.spreadList .deck.deck.HOVER:nth-child(8) > .wrap{
+    transform: rotate(-30deg) translateY(-20%);
+}
+.spreadList .deck.deck.HOVER:nth-child(4) > .wrap,
+.spreadList .deck.deck.HOVER:nth-child(7) > .wrap{
+    transform: rotate(-50deg) translateY(-20%);
+}
+.spreadList .deck.deck.HOVER:nth-child(5) > .wrap,
+.spreadList .deck.deck.HOVER:nth-child(6) > .wrap{
+    transform: rotate(-70deg) translateY(-20%);
+}
+.spreadList .deck.HOVER:nth-child(5) ~ .deck.HOVER {
+    bottom: 5vh;
+}
+.spreadList .deck  > .wrap{
+    position: relative;
+    padding:10px;
+    background-color: #fff;;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.1);
+}
+.spreadList .deck .contentBox{
+    position: relative;
+}
+
+.spreadList .deck .thm{
+    width: 100%;
+    height: 120px;
+    border-radius: 6px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 8px;
+}
+
+.spreadList .deck .textBox p {
+    overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #333;
+  margin-top: 2px;
+}
+
+.spreadList .deck .dateBox{
+    padding-top: 15px;
+    position: relative;
+    text-align: left;
+    margin-top: 15px;
+}
+.spreadList .deck .dateBox .label {
+    font-size: .8rem;
+    font-weight: 600;
+    color:#999;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.spreadList .deck .dateBox h5 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    display: inline-block;
+    vertical-align: bottom;
+    letter-spacing: -0.5px;
+}
+.spreadList .deck .dateBox h6 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: .9rem;
+    font-weight: 800;
+    margin-left: 2px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.spreadList .deck .graph {
+    position: absolute;
+    bottom: -15px;
+    left: -10px;
+    height: 6px;
+    background-color: #eee;
+    border-radius: 0 0 5px 5px;
+    width: calc(100% + 20px);
+    padding: 1.5px;
+}
+.spreadList .deck .graph .bar {
+    height: 100%;
+    border-radius: 2px;
+}
+
+
+.spreadList .deck  .btn{
+    position: absolute;
+    border-radius: 10px;
+    right: 6px;
+}
+.spreadList .deck  .btn.detailBtn{
+
+    top: 6px;
+}
+
+.spreadList + .seoulArea .mapBox{
+    height: 70vh;
+    width: 70vh;
+    top: 10vh;
+    left: unset;
+    right: 10vh;
+    transform: unset;
+}
+
+
+@media only screen and (max-width:1150px) {
+    body{
+        padding-left: unset !important;
+    }
+    section .secItem{
+        padding: unset;
+    }
+
+
+
+    .secItem.introSec .titleBox{
+        left: 70px;
+        top: 70px;
+        transform: unset;
+
+    }
+    .secItem.introSec .seoulArea{
+        padding-bottom: unset;
+        width: 100%;
+        height: 60vh;
+        transform: unset;
+        bottom: 0;
+        right: unset;
+        top: unset;
+    }
+    .secItem.introSec .titleBox h1{
+        margin-bottom: 30px;
+    }
+
+
+
+
+
+    .sideArea{
+        z-index: 40;
+        width: 100%;
+        top: 300px;
+        bottom: 0;
+        left: 0 !important;
+        /* height: calc(100vh - 300px); */
+        border-radius: 20px 20px 0 0;
+        overflow: hidden;
+    }
+    
+    .sideArea .headBox > .wrap{
+        border-radius: 20px 20px 0 0;
+
+    }
+    .sideArea .headBox .titleBox{
+        padding-bottom: 15px;
+    }
+    .sideArea .headBox .controlBox{
+        padding-top: unset;
+    }
+    .seoulArea .mapBox .mapTile .stampBox{
+        display: none;
+    }
+    .sideArea .contentBox{
+        
+        height: calc(100% - 125px);
+    }
+
+    .seoulArea{
+        width: 100%;
+        height: calc(100vh - (100vh - 300px));
+        bottom: unset;
+        left: 0;
+        position: relative;
+    }
+    .seoulArea .controlBox{
+        position: unset;
+        left: unset;
+        top: unset;
+    }
+    .seoulArea .controlBox .stateBox,
+    .seoulArea .controlBox .maptypeBox {
+        z-index: 5;
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        margin-bottom: unset;
+    }
+    .seoulArea .controlBox .stateBox{
+        padding-right: 8px;
+    }
+    .seoulArea .controlBox .stateBox .logo{
+        height: 25px;
+        width: 40px;
+    }
+    .seoulArea .controlBox .maptypeBox {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .seoulArea .controlBox .shareBtn{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+    .seoulArea .mapBox{
+        height: 240px;
+        width: 240px;
+        transform: translateX(-50%);
+        top: 55px;
+    }
+    body[data-loca="stamp"] .seoulArea .mapBox .mapTile .content{
+        display: none;
+    }
+    body[data-loca="intro"] .seoulArea .mapBox{
+        
+        width: 320px;
+        height: 320px;
+    }
+    .seoulArea .mapBox .mapTile .content .deck .thm{
+        width: 140px;
+        height: 110px;
+    }
+    body[data-loca="intro"] .seoulArea .mapBox .mapTile .content .btn.stampBtn{
+        display: none;
+    }
+    .secItem.shareSec .logo,
+    .secItem.shareSec .titleBox{
+        left: 70px;
+
+    }
+    .spreadList + .seoulArea .mapBox{
+        width:      260px;
+        height: 260px;
+        right: 20px;
+        top: 35vh;
+    }
+    .spreadList{
+        width: 40vh;
+        height: 40vh;
+        top: 70vh;
+        left: 50%;
+        transform: translateX(-50%) rotate(-10deg);
+    }
+    .spreadList .deck{
+        width: 140px;
+        height: 50vh;
+    }
+    .spreadList .deck:nth-child(1),
+    .spreadList .deck:nth-child(10) {
+        transform:rotate(-5deg) ;
+    }
+    .spreadList .deck:nth-child(2),
+    .spreadList .deck:nth-child(9) {
+        transform:rotate(10deg) ;
+    }
+    .spreadList .deck:nth-child(3),
+    .spreadList .deck:nth-child(8) {
+        transform:rotate(20deg) ;
+    }
+    .spreadList .deck:nth-child(4),
+    .spreadList .deck:nth-child(7) {
+        transform:rotate(30deg) ;
+    }
+    .spreadList .deck:nth-child(5), 
+    .spreadList .deck:nth-child(6) {
+        transform:rotate(40deg) ;
+    }
+    .spreadList .deck.deck.HOVER:nth-child(1) > .wrap,
+    .spreadList .deck.deck.HOVER:nth-child(10) > .wrap{
+        transform: rotate(5deg) translateY(-20%);
+    }
+    .spreadList .deck.deck.HOVER:nth-child(2) > .wrap,
+    .spreadList .deck.deck.HOVER:nth-child(9) > .wrap{
+        transform: rotate(-5deg) translateY(-20%);
+    }
+    .spreadList .deck.deck.HOVER:nth-child(3) > .wrap,
+    .spreadList .deck.deck.HOVER:nth-child(8) > .wrap{
+        transform: rotate(-15deg) translateY(-20%);
+    }
+    .spreadList .deck.deck.HOVER:nth-child(4) > .wrap,
+    .spreadList .deck.deck.HOVER:nth-child(7) > .wrap{
+        transform: rotate(-25deg) translateY(-20%);
+    }
+    .spreadList .deck.deck.HOVER:nth-child(5) > .wrap,
+    .spreadList .deck.deck.HOVER:nth-child(6) > .wrap{
+        transform: rotate(-35deg) translateY(-20%);
+    }
+}

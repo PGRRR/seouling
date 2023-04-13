@@ -1,0 +1,167 @@
+<html>
+<head>
+    <title>서울링</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="서울링">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="서울링">
+    <!-- <link rel="icon" href="../common/resources/favicon.ico" type="image/x-icon"> -->
+    <link type="text/css" rel="stylesheet" href="/common/css/reset.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/font.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/common.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/layout.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/contents.css?update=2210162304">
+    <link type="text/css" rel="stylesheet" href="/common/css/animate.css?update=2210162304">
+    <script type="text/javascript" src="/common/js/jquery.min.js"></script>
+</head>
+<body data-loca="active">
+<header th:include="/page/layout/header :: header"></header>
+<nav th:include="/page/layout/nav :: nav"></nav>
+<section>
+    <div class="secItem stampSec">
+        <div class="sideArea">
+            <div class="headBox">
+                <div class="wrap">
+                    <div class="titleBox">
+                        <h5><B>활동터 목록</B></h5>
+                        <div class="formItem _select">
+                            <select>
+                                <option>장터</option>
+                                <option>문화터</option>
+                                <option>관광터</option>
+                                <option>쉼터</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="controlBox">
+                        <div class="searchBox">
+                            <div class="search">
+                                <div class="formItem __search">
+                                    <input type="text" placeholder="제목 또는 내용을 검색하세요">
+                                </div>
+                                <button type="button" class="btn _w35 _h35 __style024"
+                                        onclick="$('.filterBox').toggleClass('ON')"><i class="icon"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filterBox">
+                    <div class="wrap">
+                        <div class="formBox __tem01">
+                            <div class="formLabel">목록 디자인</div>
+                            <div class="formItem">
+                                <div class="radioBox">
+                                    <input type="radio" name="listType" checked
+                                           onclick="$('.activeList').attr('data-type',$(this).val())" value="list">
+                                    <span class="mark"></span>
+                                    <span class="label">목록형</span>
+                                </div>
+                                <div class="radioBox">
+                                    <input type="radio" name="listType"
+                                           onclick="$('.activeList').attr('data-type',$(this).val())" value="block">
+                                    <span class="mark"></span>
+                                    <span class="label">블록형</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formBox __tem01">
+                            <div class="formLabel">목록 디자인</div>
+                            <div class="formItem">
+                                <div class="radioBox">
+                                    <input type="radio" name="sortType" checked>
+                                    <span class="mark"></span>
+                                    <span class="label">시작일 늦은순</span>
+                                </div>
+                                <div class="radioBox">
+                                    <input type="radio" name="sortType">
+                                    <span class="mark"></span>
+                                    <span class="label">시작일 임박순</span>
+                                </div>
+                                <div class="radioBox">
+                                    <input type="radio" name="sortType">
+                                    <span class="mark"></span>
+                                    <span class="label">종료일 늦은순</span>
+                                </div>
+                                <div class="radioBox">
+                                    <input type="radio" name="sortType">
+                                    <span class="mark"></span>
+                                    <span class="label">종료일 임박순</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formBox __tem01">
+                            <div class="formLabel">목록 디자인</div>
+                            <div class="formItem _date __range">
+                                <input type="date">
+                                <span class="dash">~</span>
+                                <input type="date">
+                            </div>
+                        </div>
+                        <div class="btnBox">
+                            <button type="button" class="btn _w35 _h35 __style024"><i class="icon"></i></button>
+                            <button type="button" class="btn _h35 __style021">필터 적용</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contentBox">
+                <div class="activeArea">
+                    <ul class="activeList" data-type="list">
+                        <!-- <li class="activeItem __empty __style02">조회된 활동이 없어요.</li> -->
+                        <div th:each="active, activeStat : ${activeList}">
+                            <li class="activeItem" th:data-con="${activeStat.count}" th:data-map="${activeStat.count}">
+                                <!--activeItem NOGRAPH SELECT-->
+                                <div class="wrap">
+                                    <div class="badge __style011">1</div>
+                                    <div class="thm"
+                                         th:style="'background-image: url(' + ${active.thumb} + ');'"></div>
+                                    <div class="textBox">
+                                        <h6><B th:text="${active.title}"></B></h6>
+                                        <p th:text="${active.content}"></p>
+                                    </div>
+                                    <div class="dateBox">
+                                        <span class="label">운영기간</span>
+                                        <h5 th:text="${active.date}"></h5>
+                                        <!--<h6><span class="__style01" >1일</span> 남음</h6>-->
+                                    </div>
+                                    <a th:href="@{/stamp/{count}(count=${activeStat.count})}">
+                                        <button type="button" class="btn _w30 _h30 __style011"><i
+                                                class="icon __plus"></i>
+                                        </button>
+                                    </a>
+                                    <div class="graph">
+                                        <div class="bar __style011" style="width: 40%"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="seoulArea">
+            <div class="mapBox">
+            </div>
+        </div>
+    </div>
+</section>
+<footer th:include="page/layout/footer :: footer"></footer>
+<!-- <div data-include-path="../layout/popup.html"></div> -->
+</body>
+<script type="text/javascript" src="../../common/js/common.js?update=2210162304"></script>
+<script>
+    mapLoading();
+    mapView('8', '3');
+    mapView('20', '4');
+    mapView('12', '1');
+    mapView('4', '2');
+</script>
+</html>

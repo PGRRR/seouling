@@ -1,0 +1,20 @@
+.scToggle,
+.scToggle .btn,
+.scToggle .bg,
+.sideArea .contentBox .activeList .activeItem {
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.filterBox,
+.sideArea .contentBox + .dropBox .icon,
+header,
+header .cateBox ,
+header .btn,
+.sideArea,
+.seoulArea,
+.deck,
+.deck > .wrap{
+
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.space.seouling.activity.dao.ActivityDao">
+    <select id="findAct" resultType="ActivityResponseDto">
+        SELECT acti_id, thmb, ttl, rpr_dsc, opr_prd_from, opr_prd_to, avrg_rtn, addr_nm, act_yn
+        FROM ACTIVITY_TB
+        WHERE acti_cd = #{acti_cd}
+        <if test="addr_nm != null">
+        AND addr_nm = #{addr_nm}
+        </if>
+        AND act_yn = 1
+        <include refid="date"/>
+        <if test="keyword != null">
+        AND ttl LIKE CONCAT('%',#{keyword},'%')
+        OR rpr_dsc LIKE CONCAT('%',#{keyword},'%')
+        </if>
+        <include refid="sort"/>
+        LIMIT #{size};
+    </select>
+    <select id="findStamp" resultType="ActivityResponseDto">
+        SELECT acti_id, thmb, ttl, rpr_dsc, opr_prd_from, opr_prd_to, avrg_rtn, addr_nm, act_yn
+        FROM ACTIVITY_TB
+        WHERE acti_id = #{acti_id};
+    </select>
+    <sql id="date">
+        <choose>
+            <when test="from != null and to != null">
+                AND opr_prd_from BETWEEN #{from} AND #{to}
+            </when>
+            <when test="from == null and to != null">
+                AND opr_prd_from BETWEEN '0000-01-01' AND #{to}
+            </when>
+            <when test="from != null and to == null">
+                AND opr_prd_from BETWEEN #{from} AND '9999-12-31'
+            </when>
+        </choose>
+    </sql>
+    <sql id="sort">
+        <choose>
+            <when test="sort == 'from,asc'">
+                ORDER BY ABS(now() - opr_prd_from) ASC # 시작일 임박순
+            </when>
+            <when test="sort == 'from,desc'">
+                ORDER BY ABS(now() - opr_prd_from) DESC # 시작일 늦은순
+            </when>
+            <when test="sort == 'to,asc'">
+                ORDER BY ABS(now() - opr_prd_to) ASC # 종료일 임박순
+            </when>
+            <when test="sort == 'to,desc'">
+                ORDER BY ABS(now() - opr_prd_to) DESC # 종료일 늦은순
+            </when>
+            <otherwise>
+                ORDER BY opr_prd_from ASC # 기본 정렬
+            </otherwise>
+        </choose>
+    </sql>
+    <select id="addrCount" resultType="int">
+        SELECT COUNT(addr_nm)
+        FROM ACTIVITY_TB
+        WHERE act_yn = 1
+        AND addr_nm LIKE CONCAT('%',#{addr},'%');
+    </select>
+    <insert id="save" parameterType="int">
+        INSERT INTO STAMP_TB(acti_id, user_id, seq)
+        VALUES (#{acti_id}, #{user_id}, #{seq});
+    </insert>
+    <select id="findAll" parameterType="int">
+        SELECT *
+        FROM STAMP_TB
+        WHERE user_id = #{user_id};
+    </select>
+    <insert id="saveAct" parameterType="Activity">
+        INSERT INTO ACTIVITY_TB(acti_cd, thmb, thmb_alt, ttl, rpr_dsc, opr_prd_from, opr_prd_to, orgn_site, addr_nm)
+        VALUES (#{acti_cd}, #{thmb}, #{thmb_alt}, #{ttl}, #{rpr_dsc}, #{opr_prd_from}, #{opr_prd_to}, #{orgn_site}, #{addr_nm});
+    </insert>
+</mapper>

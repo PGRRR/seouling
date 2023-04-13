@@ -25,10 +25,10 @@
 
 
 ## 구성원
-| Backend                                                      | Backend | Backend |     | 
-|--------------------------------------------------------------| --- |---|-----|
-| ![MIN](https://avatars.githubusercontent.com/u/91787050?v=4) | ![iseon_u](https://avatars.githubusercontent.com/u/82517133?v=4) | ![Dev_Park](https://avatars.githubusercontent.com/u/68197907?v=4) ||
-| [서창희](https://github.com/ch4570)                             | [이선우](https://github.com/PGRRR) | [박채훈](https://github.com/xpmxf4) |     |
+| Backend                                                      | Backend | Backend |     
+|--------------------------------------------------------------| --- |---|
+| ![MIN](https://avatars.githubusercontent.com/u/91787050?v=4) | ![iseon_u](https://avatars.githubusercontent.com/u/82517133?v=4) | ![Dev_Park](https://avatars.githubusercontent.com/u/68197907?v=4) |
+| [서창희](https://github.com/ch4570)                             | [이선우](https://github.com/PGRRR) | [박채훈](https://github.com/xpmxf4) |     
 
 
 

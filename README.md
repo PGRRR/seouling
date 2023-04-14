@@ -7,11 +7,7 @@
 ![Apache Tomcat](https://img.shields.io/badge/apache%20tomcat-333.svg?style=for-the-badge&logo=apache%20tomcat&logoColor=F8DC75)
 
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1.svg?style=for-the-badge&logo=MySQL&logoColor=white)
-![Amazon RDS](https://img.shields.io/badge/Amazon%20RDS-527FFF.svg?style=for-the-badge&logo=Amazon%20RDS&logoColor=white)
-![Amazon EC2](https://img.shields.io/badge/amazon%20ec2-orange.svg?style=for-the-badge&logo=amazon%20ec2&logoColor=white)
-![Amazon S3](https://img.shields.io/badge/amazon%20s3-569A31.svg?style=for-the-badge&logo=amazon%20s3&logoColor=white)
 
-![React](https://img.shields.io/badge/react-black.svg?style=for-the-badge&logo=react&logoColor=skyblue)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white)](https://developer.mozilla.org/ko/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6.svg?&style=for-the-badge&logo=CSS3&logoColor=white)](https://developer.mozilla.org/ko/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=black)](https://www.javascript.com/)
